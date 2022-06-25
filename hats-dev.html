@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>StoneLight hats</title>
+    <style>
+        @font-face {
+            font-family: TTNorms;
+            src: url(TTNorms-Bold.woff2);
+        }
+
+        body {
+            font-family: TTNorms;
+        }
+        table {
+            border-collapse: collapse;
+            
+        } 
+        td {
+            border: silver dashed 2px;
+            padding: 10px;
+        }
+    </style>
+    <script>
+        var hats = ["Straw Hat", "Shepard Hat", "Fisherman Hat", "Monicle", "Fletcher Hat", "Welder Goggles Off", "Welder Goggles On", "Book", "Bucket", "Water Bucket", "Lava Bucket", "Powder Snow Bucket", "Enchanted Book", "Sandwich", "Toilet", "Sheep Hat", "Krusty Krab Employee Hat", "Bloody Iron Sword", "Cowboy Hat", "Fox Hat", "Raccoon Hat", "Pirate Hat", "Police Hat", "Mario Cap", "Gas Mask", "Propeller Hat", "Error Hat"];
+        window.onload = function() {
+            for (let i = 0; i < hats.length; i++) {
+                var a = document.createElement("tr");
+                var b = document.createElement("td");
+                b.appendChild(document.createElement("img"));
+                b.lastChild.src = "img/hats/" + (i + 1).toString() + ".png";
+                b.lastChild.height = "80";
+                a.appendChild(b);
+                b = document.createElement("td");
+                b.style = "font-size: larger;";
+                b.textContent = hats[i];
+                a.appendChild(b);
+                table.appendChild(a);
+            }    
+        };
+    </script>
+</head>
+<body>
+    <table>
+        <tbody id="table">
+
+        </tbody>
+    </table>
+</body>
+</html>
