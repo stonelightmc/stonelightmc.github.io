@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /img/
+Disallow: /index-dev.html
+Disallow: /hats-dev.html
+Disallow: /hats.html
+Disallow: /TTNorms-Bold.woff2
