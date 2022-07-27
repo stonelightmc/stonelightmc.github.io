@@ -65,7 +65,7 @@
             document.getElementsByTagName("style")[0].innerHTML = out;
         }
         function closeTrades() {
-            document.getElementById("trade-list").innerHTML = "";
+            document.getElementById("trade-list").innerHTML = "<span style=\"margin-bottom: 5px; font-size: larger;\">Цены</span>";
             document.getElementById("modal").classList.add("hide");
         }
         function viewTrades() {
@@ -162,12 +162,17 @@
                             out.appendChild(temp);
                         }
                     });
+                    if(json[i]["type"] == "s"){
+                        out.onclick = viewTrades;
+                        temp = document.createElement("div");
+                        temp.textContent = "Посмотреть цены";
+                        temp.style.color = "#0000ff";
+                        temp.style.cursor = "pointer";
+                        out.appendChild(temp);
+                    }
                     temp = document.createElement("div");
                     temp.textContent = "Владелец: " + json[i]["owner"];
                     out.appendChild(temp);
-                    if(json[i]["type"] == "s"){
-                        out.onclick = viewTrades;
-                    }
                     document.getElementById("places").appendChild(out);
                 }
             }

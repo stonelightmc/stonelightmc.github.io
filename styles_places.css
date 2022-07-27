@@ -137,6 +137,7 @@ select:focus {
     top: 15px;
     width: 32px;
     height: 32px;
+    cursor: pointer;
 }
 
 .close:before, .close:after {
