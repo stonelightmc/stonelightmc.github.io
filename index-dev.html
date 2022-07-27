@@ -7,7 +7,7 @@
     <link rel="shortcut icon" href="/img/favicon.ico">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="styles_index.css">
-    <meta name="viewport" content="width=device-width; initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="module" src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
     <script nomodule defer src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
 </head>
@@ -20,31 +20,31 @@
                 <span style="font-size: 25px; color: #4596ff;" class="hide_on_phone">Stonelight</span>
             </div>
             <div id="pages">
-                <a href="/index.html" class="checked">Главная</a>
-                <a href="/places.html">Постройки</a>
+                <a href="/index.html" class="lng-main">Главная</a>
+                <a href="/places.html" class="lng-buildings">Постройки</a>
             </div>
             <div style="justify-content: flex-end;">
-                <span class="NoRuBy hide_on_phone" onclick="hidenoruby()"><span id="nohover">Сервер недоступен на территории России и Беларуси</span><div id="onhover"><span>Закрыть</span></div></span>
+                <span class="lng-NoRuBy" onclick="hidenoruby()"><span id="nohover">Сервер недоступен на территории России и Беларуси</span><div id="onhover"><span>Закрыть</span></div></span>
             </div>
         </div>
         
     </header>
     <div id="description">
         <div id="bol-blue">
-            <h1 id="mainD">StoneLight - ванильный сервер без приватов и доната</h1>
-            <div id="secD">Выживайте, вступайте в кланы, находите новых друзей и просто
+            <h1 class="lng-sl">StoneLight - ванильный сервер без приватов и доната</h1>
+            <div id="secD" class="lng-sur">Выживайте, вступайте в кланы, находите новых друзей и просто
                 весело проводите время :D</div>
             <div style="display: flex; align-items: center;">
                 <a class="white link" href="https://discord.gg/GCfnjCsurR" style="margin-right: 10px;">
                     <img src="img/discord.webp" height="40px" style="margin-right: 10px; vertical-align: middle;">
-                    <span style="vertical-align: middle; font-size: larger;">Вступить в Дискорд</span>
+                    <span style="vertical-align: middle; font-size: larger;" class="lng-discord">Вступить в Дискорд</span>
                 </a>
                 <!--<div class="white">
                     <img src="img/more.webp" height="32px" style="margin-right: 10px; vertical-align: middle;">
                     <span style="vertical-align: middle; font-size: larger;">Подробнее</span>
                 </div>-->
             </div>
-            <div class="show_on_phone" style="color: red; font-size: larger;">Сервер недоступен на территории России и Беларуси</div>
+            <div class="show_on_phone" style="color: red; font-size: larger;"><p class="lng-nobyru">Сервер недоступен на территории России и Беларуси</p></div>
         </div>
         <div id="blue_fon">
         </div>
@@ -53,38 +53,38 @@
     <div class="flex" id="toDo">
         <div class="toDoElem">
             <img src="img/do/ork-kopaet.webp" style="height: 80%;">
-            <div style="font-size: larger;">Развивайтесь</div>
+            <div style="font-size: larger;"><p class="lng-develop">Развивайтесь</p></div>
         </div>
         <div class="toDoElem">
             <img src="img/do/klan.webp" style="width: 100%;">
-            <div style="font-size: larger;">Присоединяйтесь к кланам</div>
+            <div style="font-size: larger;" class="lng-clans">Присоединяйтесь к кланам</div>
             
         </div>
         <div class="toDoElem">
             <img src="img/do/achivka.webp" style="height: 60%;">
-            <div style="font-size: larger;">Выполняйте интересные ачивки</div>
+            <div style="font-size: larger;" class="lng-quests">Выполняйте интересные ачивки</div>
         </div>
         <div class="toDoElem">
             <img src="img/do/magaz.webp" style="width: 100%;">
-            <div style="font-size: larger;">Открывайте собственные магазины</div>
+            <div style="font-size: larger;" class="lng-shops">Открывайте собственные магазины</div>
         </div>
         <div class="toDoElem">
             <img src="img/do/dom.webp" style="width: 100%;">
-            <div style="font-size: larger;">Создавайте маштабные проекты</div>
+            <div style="font-size: larger;" class="lng-project">Создавайте маштабные проекты</div>
         </div>
     </div>
     <div id="pirat">
         <div>
-            На сервер можно зайти с пиратской версии Java или с Bedrock Minecraft-а
+            <p class="lng-pirate" >На сервер можно зайти с пиратской версии Java или с Bedrock Minecraft-а</p>
             <br>
             IP: stonelight.apexmc.co
         </div>
     </div>
     <div id="lblue">
-        <span style="font-size: 25px;">StoneLight - сервер ванильного выживания, имеющий некоторые дополнения и небольшие изменения игровых механик.<br> На сервере: </span>
+        <span style="font-size: 25px;" class="lng-sl1">StoneLight - сервер ванильного выживания, имеющий некоторые дополнения и небольшие изменения игровых механик.<br></span>
         <ul style="text-align: left; font-size: larger; padding: 0; margin-left: 20px;">
-            <li>Измененены некоторые торги у жителей<img src="img/more.svg" height="20" style="vertical-align: middle; margin-left: 5px; transition: transform 0.4s;" onclick="onoff('alm', this)"></li>
-            <div class="hide note" id="alm">Алмазные вещи (броня, инструменты, оружие) жители будут продавать не только за изумруды, а и за алмазы (цена у жителей будет меньше чем при крафте на верстаке), книги зачарования будут продаваться за лазурит. Все инструменты и вся броня продаются без зачарований</div>
+            <li class="lng-trading">Измененены некоторые торги у жителей</li><img src="img/more.svg" height="20" style="vertical-align: middle; margin-left: 5px; transition: transform 0.4s;" onclick="onoff('alm', this)">
+            <div class="hide note" id="alm"><p class="lng-trade">Алмазные вещи (броня, инструменты, оружие) жители будут продавать не только за изумруды, а и за алмазы (цена у жителей будет меньше чем при крафте на верстаке), книги зачарования будут продаваться за лазурит. Все инструменты и вся броня продаются без зачарований</p></div>
             <li>Установлен датапак BlazeAndCave's, добавляющий в игру около 1000 новых достижений</li>
             <li>Уменьшен шанс дропа тотема с призывателя со 100% до 5%</li>
             <li>Добавлен крафт для мешков<img src="img/more.svg" height="20" style="vertical-align: middle; margin-left: 5px; transition: transform 0.4s;" onclick="onoff('meshok', this)"></li>
@@ -166,8 +166,12 @@
                     Созьдаль сайтикь
                 </div>
             </a>
+            </div>
+            <select>
+                <option value="ru">RU</option>
+                <option value="en">EN</option>
+            </select>
         </div>
-    </div>
     <script>
         function hide(id) {
             document.getElementById(id).classList.add("hide");
@@ -176,6 +180,7 @@
             document.getElementById(id).classList.remove("hide");
         }
         function onoff(id, thiS) {
+            console.log(thiS)
             if(document.getElementById(id).classList.contains("hide")) {
                 thiS.classList.add("rotate");
                 show(id);
@@ -203,6 +208,8 @@
     
       gtag('config', 'G-42DLHBGV89');
     </script>
+    <script src="./lang.js"></script>
+    <script src="./change_lang.js"></script>
 </body>
 
 </html>

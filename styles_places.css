@@ -23,7 +23,7 @@ select:focus {
     user-select: none;
 }
 
-.placeChanger.checked {
+.placeChanger.lng-main {
     background: linear-gradient(180deg, #ffffff 95%, #4a87e1 1%);
 }
 
@@ -162,7 +162,7 @@ select:focus {
         padding: 10px 5px;
         margin: 0 5px;
     }
-    .placeChanger.checked {
+    .placeChanger.lng-main {
         background: linear-gradient(180deg, #ffffff 93%, #4a87e1 1%);
     }
 }
