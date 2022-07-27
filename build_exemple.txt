@@ -1,0 +1,48 @@
+"buildings": [
+        {
+            "name": "Вкусно и точка",
+            "type": "s",
+            "#32cd32": "130 n -80",
+            "#ff1e00": "n n n",
+            "#d100d1": "n n n",
+            "owner": "Uniritial",
+            "description": "Тут можете вы поесть",
+            "trades": [
+                {
+                    "input": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/5/55/Glow_Item_Frame_%28item%29_JE2.png",
+                    "input-num": "12",
+                    "output": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/5/55/Glow_Item_Frame_%28item%29_JE2.png",
+                    "output-num": "14"
+                },
+                {
+                    "input": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/5/55/Glow_Item_Frame_%28item%29_JE2.png",
+                    "input-num": "17",
+                    "output": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/5/55/Glow_Item_Frame_%28item%29_JE2.png",
+                    "output-num": "19"
+                }
+            ]
+        },
+        {
+            "name": "Лесное поместье",
+            "type": "o",
+            "#32cd32": "130 78 -80",
+            "#ff1e00": "n n n",
+            "#d100d1": "n n n",
+            "owner": "ArchTeesee",
+            "description": "Дерево есть",
+            "trades": [
+                {
+                    "input": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/5/55/Glow_Item_Frame_%28item%29_JE2.png",
+                    "input-num": "18",
+                    "output": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/5/55/Glow_Item_Frame_%28item%29_JE2.png",
+                    "output-num": "2"
+                },
+                {
+                    "input": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/5/55/Glow_Item_Frame_%28item%29_JE2.png",
+                    "input-num": "12",
+                    "output": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/5/55/Glow_Item_Frame_%28item%29_JE2.png",
+                    "output-num": "19"
+                }
+            ]
+        }
+    ]
