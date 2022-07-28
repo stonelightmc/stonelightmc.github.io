@@ -89,11 +89,11 @@ body {
     line-height: 80px;
 }
 
-#pages a.main {
+#pages a.checked {
     background: linear-gradient(180deg, #ffffff 97%, #5791eb 1%);
 }
 
-.lng-sl {
+#mainD {
     font-size: 60px;
     color: white;
 }

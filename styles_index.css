@@ -53,12 +53,6 @@
     margin: 5px;
 }
 
-.ghost {
-    color: white;
-    font-size: larger;
-    text-decoration: none;
-}
-
 #renImg {
     pointer-events: none;
     position: absolute;
