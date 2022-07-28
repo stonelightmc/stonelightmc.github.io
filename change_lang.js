@@ -19,7 +19,6 @@ function changeLanguage() {
     select.value = hash;
 for (let key in LangArr) {
     document.querySelector('.lng-' + key).innerHTML = LangArr[key][hash];
-    console.log(document.querySelector('.lng-' + key).innerHTML = LangArr[key][hash]);
 }
 }
 changeLanguage();
