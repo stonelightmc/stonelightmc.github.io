@@ -16,11 +16,32 @@ select:focus {
     border: #000000 solid 2px;
 }
 
+#playerList {
+    border-radius: 20px;
+    border: #000 solid 1px; 
+    padding: 12px 20px 20px 20px;
+    max-height: 300px;
+    overflow-x: scroll;
+}
+
 .placeChanger {
     padding: 16px;
     vertical-align: middle;
     margin: 0 10px;
     user-select: none;
+}
+
+.playerBorder {
+  border: #000 solid 1px;
+  padding: 4px;
+  line-height: 40px;
+  border-radius: 5px;
+  margin-bottom: 4px;
+}
+
+.playerBorder img {
+  height: 40px;
+  margin-right: 5px;
 }
 
 .placeChanger.checked {
