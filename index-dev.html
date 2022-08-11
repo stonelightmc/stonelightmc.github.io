@@ -3,13 +3,20 @@
 
 <head>
     <title>&#12300;Stonelight&#12301;</title>
-    <!--<link rel="canonical" href="https://stonelightmc.github.io/index.html">-->
+    <link rel="canonical" href="https://stonelightmc.github.io/index.html">
     <link rel="shortcut icon" href="/img/favicon.ico">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="styles_index.css">
     <meta name="viewport" content="width=device-width; initial-scale=1">
     <script type="module" src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
     <script nomodule defer src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-42DLHBGV89"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-42DLHBGV89');
+    </script>
 </head>
 
 <body>
@@ -22,6 +29,7 @@
             <div id="pages">
                 <a href="/index.html" class="checked">Главная</a>
                 <a href="/places.html">Постройки</a>
+                <a href="/klans.html">Кланы</a>
             </div>
             <div style="justify-content: flex-end;">
                 <span class="NoRuBy hide_on_phone" onclick="hidenoruby()"><span id="nohover">Сервер недоступен на территории России и Беларуси</span><div id="onhover"><span>Закрыть</span></div></span>
@@ -194,14 +202,6 @@
             document.getElementsByClassName("NoRuBy")[0].classList.add("opahide");
             Cookies.set('hided', 'true', { expires: 7 })
         }
-    </script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-42DLHBGV89"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-    
-      gtag('config', 'G-42DLHBGV89');
     </script>
 </body>
 

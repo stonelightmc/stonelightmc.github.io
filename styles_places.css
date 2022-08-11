@@ -186,4 +186,7 @@ select:focus {
     .placeChanger.checked {
         background: linear-gradient(180deg, #ffffff 93%, #4a87e1 1%);
     }
+    .place {
+      max-width: 100%;
+    }
 }

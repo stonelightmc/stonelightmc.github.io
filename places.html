@@ -1,1 +1,187 @@
-<!DOCTYPE html><html lang="en"><head><title>&#12300;Stonelight&#12301;</title><link rel="shortcut icon" href="/img/favicon.ico"><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="styles_places.css"><meta name="viewport" content="width=device-width; initial-scale=1"><script type="module" src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script><script nomodule defer src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script><style>m{display: initial}b{display: initial}p{display: initial}o{display: initial} </style></head><body><header><div id="rHeader"><div style="justify-content: flex-start;"><img src="img/logo.webp" height="80"><span style="font-size: 25px; color: #4596ff;" class="hide_on_phone">StoneLight</span></div><div id="pages"><a href="/index.html">Главная</a><a href="/places.html" class="checked">Постройки</a></div><div style="justify-content: flex-end;"><span class="NoRuBy hide_on_phone" onclick="hidenoruby()"><span id="nohover">Сервер недоступен на территории России и Беларуси</span><div id="onhover"><span>Закрыть</span></div></span></div></div><span class="NoRuBy show_on_phone">Сервер недоступен на территории России и Беларуси</span></header><div id="places-desc"><span id="mainD">Постройки</span></div><div style="display: flex; align-items: center; justify-content: center;"><div class="placeChanger checked" onclick="changeContent('a', this)">Всё</div><div class="placeChanger" onclick="changeContent('s', this)">Магазины</div><div class="placeChanger" onclick="changeContent('b', this)">Базы</div><div class="placeChanger" onclick="changeContent('p', this)">Постройки </div><div class="placeChanger" onclick="changeContent('o', this)">Другое</div></div><div id="places"></div><div id="modal" class="hide"><div id="modal-content"><div id="trade-list"><span style="margin-bottom: 5px; font-size: larger;">Цены</span></div><div class="close" onclick="closeTrades()"></div></div><div id="blacker"></div></div><script>window.onload=loadContent; function changeContent(type, thiS){ document.querySelector(".placeChanger.checked").classList.remove("checked"); thiS.classList.add("checked"); let out=""; ["s", "b", "p", "o"].forEach(element=>{ out +="." + element + "{display:" + ((type==element || type=="a") ? "initital}" : "none}");}); document.getElementsByTagName("style")[0].innerHTML=out;} function closeTrades(){ document.getElementById("trade-list").innerHTML="<span style=\"margin-bottom: 5px; font-size: larger;\">Цены</span>"; document.getElementById("modal").classList.add("hide");} function viewTrades(){ var xhr=new XMLHttpRequest(); xhr.open('GET', 'buildings.json', false); xhr.send(); if (xhr.status !=200){ alert(xhr.status + ': ' + xhr.statusText);} else{ var json=JSON.parse(xhr.responseText)["buildings"]; var trades; json.forEach(element=>{ if(element["name"]==event.currentTarget.children[0].innerHTML){ trades=element["trades"];}}); trades.forEach(element=>{ var fon=document.createElement("div"); fon.classList.add("trade-fon"); fon.appendChild(createItem(element["input"], element["input-num"])); var arrow=document.createElement("img"); arrow.src="img/arrow.svg"; arrow.style.width="30px"; fon.appendChild(arrow); fon.appendChild(createItem(element["output"], element["output-num"])); document.getElementById("trade-list").appendChild(fon);});} document.getElementById("modal").classList.remove("hide");} function createItem(input, input_num){ var out=document.createElement("div"); out.classList.add("mc-item"); var temp=document.createElement("img"); temp.src=input; out.appendChild(temp); temp=document.createElement("span"); temp.textContent=input_num; out.appendChild(temp); return out;} function hidenoruby(){ document.getElementsByClassName("NoRuBy")[0].classList.add("opahide"); Cookies.set('hided', 'true',{ expires: 7})} function loadContent(){ if(Cookies.get('hided') !="true"){ document.styleSheets[0].deleteRule(6);} var xhr=new XMLHttpRequest(); xhr.open('GET', 'buildings.json', false); xhr.send(); if (xhr.status !=200){ alert(xhr.status + ': ' + xhr.statusText);} else{ var json=JSON.parse(xhr.responseText)["buildings"]; for (let i=0; i < json.length; i++){ var out=document.createElement("div"); out.classList.add("place"); var temp=document.createElement("div"); temp.textContent=json[i]["name"]; out.appendChild(temp); temp=document.createElement("img"); temp.style.width="100%"; temp.src="/img/places/" + i.toString() + ".webp"; out.appendChild(temp); temp=document.createElement("div"); switch (json[i]["type"]){ case "s": temp.textContent="Магазин"; break; case "b": temp.textContent="База"; break; case "p": temp.textContent="Постройка"; break; default: temp.textContent=json[i]["type"]; out.classList.add("o"); break;} if(!out.classList.contains("o")){ out.classList.add(json[i]["type"]);} out.appendChild(temp); ["#32cd32", "#ff1e00", "#d100d1"].forEach(element=>{ if (json[i][element][0] !='n'){ temp=document.createElement("div"); temp.style.color=element; var coords=json[i][element].split(" "); temp.textContent="X:" + coords[0] + (coords[1] !='n' ? " Y:" + coords[1] : "") + " Z:" + coords[2]; out.appendChild(temp);}}); if(json[i]["type"]=="s"){ out.onclick=viewTrades; temp=document.createElement("div"); temp.textContent="Посмотреть цены"; temp.style.color="#0000ff"; temp.style.cursor="pointer"; out.appendChild(temp);} temp=document.createElement("div"); temp.textContent="Владелец: " + json[i]["owner"]; out.appendChild(temp); document.getElementById("places").appendChild(out);}}} </script><script async src="https://www.googletagmanager.com/gtag/js?id=G-42DLHBGV89"></script><script>window.dataLayer=window.dataLayer || []; function gtag(){dataLayer.push(arguments)} gtag('js', new Date()); gtag('config', 'G-42DLHBGV89'); </script></body>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>&#12300;Stonelight&#12301;</title>
+    <!--<link rel="canonical" href="https://stonelightmc.github.io/places.html">-->
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles_places.css">
+    <meta name="viewport" content="width=device-width; initial-scale=1">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-42DLHBGV89"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-42DLHBGV89');
+    </script>
+    <style>
+        m{display: initial}b{display: initial}p{display: initial}o{display: initial}
+    </style>
+</head>
+
+<body>
+    <header>
+        <div id="rHeader">
+            <div style="justify-content: flex-start;">
+                <img src="img/logo.webp" height="80">
+                <span style="font-size: 25px; color: #4596ff;" class="hide_on_phone">StoneLight</span>
+            </div>
+            <div id="pages">
+                <a href="/index.html">Главная</a>
+                <a href="/places.html" class="checked">Постройки</a>
+                <a href="/klans.html">Кланы</a>
+            </div>
+            <div style="justify-content: flex-end;">
+                <span class="NoRuBy hide_on_phone" onclick="hidenoruby()"><span id="nohover">Сервер недоступен на территории России и Беларуси</span><div id="onhover"><span>Закрыть</span></div></span>
+            </div>
+        </div>
+        <span class="NoRuBy show_on_phone">Сервер недоступен на территории России и Беларуси</span>
+    </header>
+    <div id="places-desc">
+        <span id="mainD">Постройки</span>
+    </div>
+    <div style="display: flex; align-items: center; justify-content: center;">
+        <div class="placeChanger checked" onclick="changeContent('a', this)">Всё</div>
+        <div class="placeChanger" onclick="changeContent('s', this)">Магазины</div>
+        <div class="placeChanger" onclick="changeContent('b', this)">Базы</div>
+        <div class="placeChanger" onclick="changeContent('p', this)">Постройки </div>
+        <div class="placeChanger" onclick="changeContent('o', this)">Другое</div>
+    </div>
+    <div id="places">
+    </div>
+    <div id="modal" class="hide">
+        <div id="modal-content">
+            <div id="trade-list">
+                <span style="margin-bottom: 5px; font-size: larger;">Цены</span>
+            </div>
+            <div class="close" onclick="closeTrades()"></div>
+        </div>
+        <div id="blacker"></div>
+    </div>
+    <script>
+        window.onload = loadContent;
+        function changeContent(type, thiS) {
+            document.querySelector(".placeChanger.checked").classList.remove("checked");
+            thiS.classList.add("checked");
+            let out = "";
+            ["s", "b", "p", "o"].forEach(element => {
+                out += "." + element + "{display:" + ((type == element || type == "a") ? "initital}" : "none}");
+            });
+            document.getElementsByTagName("style")[0].innerHTML = out;
+        }
+        function closeTrades() {
+            document.getElementById("trade-list").innerHTML = "<span style=\"margin-bottom: 5px; font-size: larger;\">Цены</span>";
+            document.getElementById("modal").classList.add("hide");
+        }
+        function viewTrades() {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', 'buildings.json', false);
+            xhr.send();
+            if (xhr.status != 200) {
+                alert(xhr.status + ': ' + xhr.statusText);
+            } else {
+                var json = JSON.parse(xhr.responseText)["buildings"];
+                var trades;
+                json.forEach(element => {
+                    if(element["name"] == event.currentTarget.children[0].innerHTML) {
+                        trades = element["trades"];
+                    }
+                });
+                trades.forEach(element => {
+                    var fon = document.createElement("div");
+                    fon.classList.add("trade-fon");
+                    fon.appendChild(createItem(element["input"], element["input-num"]));
+                    var arrow = document.createElement("img");
+                    arrow.src = "img/arrow.svg";
+                    arrow.style.width = "30px";
+                    fon.appendChild(arrow);
+                    fon.appendChild(createItem(element["output"], element["output-num"]));
+                    document.getElementById("trade-list").appendChild(fon);
+                });
+                
+            }
+            document.getElementById("modal").classList.remove("hide");
+        }
+        function createItem(input, input_num) {
+            var out = document.createElement("div");
+            out.classList.add("mc-item");
+            var temp = document.createElement("img");
+            temp.src = input;
+            out.appendChild(temp);
+            temp = document.createElement("span");
+            temp.textContent = input_num;
+            out.appendChild(temp);
+            return out;
+        }
+        function hidenoruby() {
+            document.getElementsByClassName("NoRuBy")[0].classList.add("opahide");
+            Cookies.set('hided', 'true', { expires: 7 })
+        }
+        function loadContent() {
+            if(Cookies.get('hided') != "true") {
+               document.styleSheets[0].deleteRule(6);
+            }
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', 'buildings.json', false);
+            xhr.send();
+            if (xhr.status != 200) {
+                alert(xhr.status + ': ' + xhr.statusText);
+            } else {
+                var json = JSON.parse(xhr.responseText)["buildings"];
+                for (let i = 0; i < json.length; i++) {
+                    var out = document.createElement("div");
+                    out.classList.add("place");
+                    var temp = document.createElement("div");
+                    temp.textContent = json[i]["name"];
+                    out.appendChild(temp);
+                    temp = document.createElement("img");
+                    temp.style.width = "100%";
+                    temp.src = "/img/places/" + i.toString() + ".webp";
+                    out.appendChild(temp);
+                    temp = document.createElement("div");
+                    switch (json[i]["type"]) {
+                        case "s":
+                            temp.textContent = "Магазин";
+                            break;
+                        case "b":
+                            temp.textContent = "База";
+                            break;
+                        case "p":
+                            temp.textContent = "Постройка";
+                            break;
+                        default:
+                            temp.textContent = json[i]["type"];
+                            out.classList.add("o");
+                            break;
+                    }
+                    if(!out.classList.contains("o")) {
+                        out.classList.add(json[i]["type"]);
+                    }
+                    out.appendChild(temp);
+                    ["#32cd32", "#ff1e00", "#d100d1"].forEach(element => {
+                        if (json[i][element][0] != 'n') {
+                            temp = document.createElement("div");
+                            temp.style.color = element;
+                            var coords = json[i][element].split(" ");
+                            temp.textContent = "X:" + coords[0] + (coords[1] != 'n' ? " Y:" + coords[1] : "") + " Z:" + coords[2];
+                            out.appendChild(temp);
+                        }
+                    });
+                    if(json[i]["type"] == "s"){
+                        out.onclick = viewTrades;
+                        temp = document.createElement("div");
+                        temp.textContent = "Посмотреть цены";
+                        temp.style.color = "#0000ff";
+                        temp.style.cursor = "pointer";
+                        out.appendChild(temp);
+                    }
+                    temp = document.createElement("div");
+                    temp.textContent = "Владелец: " + json[i]["owner"];
+                    out.appendChild(temp);
+                    document.getElementById("places").appendChild(out);
+                }
+            }
+        }
+    </script>
+</body>
