@@ -33,10 +33,8 @@
                 <a href="/klans.html">Кланы</a>
             </div>
             <div style="justify-content: flex-end;">
-                <span class="NoRuBy hide_on_phone" onclick="hidenoruby()"><span id="nohover">Сервер недоступен на территории России и Беларуси</span><div id="onhover"><span>Закрыть</span></div></span>
             </div>
         </div>
-        <span class="NoRuBy show_on_phone">Сервер недоступен на территории России и Беларуси</span>
     </header>
     <div id="places-desc">
         <span id="mainD">Постройки</span>
@@ -114,14 +112,7 @@
             out.appendChild(temp);
             return out;
         }
-        function hidenoruby() {
-            document.getElementsByClassName("NoRuBy")[0].classList.add("opahide");
-            Cookies.set('hided', 'true', { expires: 7 })
-        }
         function loadContent() {
-            if(Cookies.get('hided') != "true") {
-               document.styleSheets[0].deleteRule(6);
-            }
             var xhr = new XMLHttpRequest();
             xhr.open('GET', 'buildings.json', false);
             xhr.send();

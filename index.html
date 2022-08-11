@@ -1,1 +1,208 @@
-<!DOCTYPE html><html lang="en"><head><title>&#12300;Stonelight&#12301;</title><link rel="shortcut icon" href="/img/favicon.ico"><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="styles_index.css"><meta name="viewport" content="width=device-width; initial-scale=1"><script type="module" src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script><script nomodule defer src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script></head><body><header><div id="rHeader"><div style="justify-content: flex-start;"><img src="img/logo.webp" height="80"><span style="font-size: 25px; color: #4596ff;" class="hide_on_phone">Stonelight</span></div><div id="pages"><a href="/index.html" class="checked">Главная</a><a href="/places.html">Постройки</a></div><div style="justify-content: flex-end;"><span class="NoRuBy hide_on_phone" onclick="hidenoruby()"><span id="nohover">Сервер недоступен на территории России и Беларуси</span><div id="onhover"><span>Закрыть</span></div></span></div></div></header><div id="description"><div id="bol-blue"><h1 id="mainD">StoneLight - ванильный сервер без приватов и доната</h1><div id="secD">Выживайте, вступайте в кланы, находите новых друзей и просто весело проводите время :D</div><div style="display: flex; align-items: center;"><a class="white link" href="https://discord.gg/GCfnjCsurR" style="margin-right: 10px;"><img src="img/discord.webp" height="40px" style="margin-right: 10px; vertical-align: middle;"><span style="vertical-align: middle; font-size: larger;">Вступить в Дискорд</span></a></div><div class="show_on_phone" style="color: red; font-size: larger;">Сервер недоступен на территории России и Беларуси</div></div><div id="blue_fon"></div><img src="img/banner.webp" id="renImg" class="hide_on_phone" style="height: 100%; z-index: -1;"></div><div class="flex" id="toDo"><div class="toDoElem"><img src="img/do/ork-kopaet.webp" style="height: 80%;"><div style="font-size: larger;">Развивайтесь</div></div><div class="toDoElem"><img src="img/do/klan.webp" style="width: 100%;"><div style="font-size: larger;">Присоединяйтесь к кланам</div></div><div class="toDoElem"><img src="img/do/achivka.webp" style="height: 60%;"><div style="font-size: larger;">Выполняйте интересные ачивки</div></div><div class="toDoElem"><img src="img/do/magaz.webp" style="width: 100%;"><div style="font-size: larger;">Открывайте собственные магазины</div></div><div class="toDoElem"><img src="img/do/dom.webp" style="width: 100%;"><div style="font-size: larger;">Создавайте маштабные проекты</div></div></div><div id="pirat"><div>На сервер можно зайти с пиратской версии Java или с Bedrock Minecraft-а <br>IP: stonelight.apexmc.co </div></div><div id="lblue"><span style="font-size: 25px;">StoneLight - сервер ванильного выживания, имеющий некоторые дополнения и небольшие изменения игровых механик.<br>На сервере: </span><ul style="text-align: left; font-size: larger; padding: 0; margin-left: 20px;"><li>Измененены некоторые торги у жителей<img src="img/more.svg" height="20" style="vertical-align: middle; margin-left: 5px; transition: transform 0.4s;" onclick="onoff('alm', this)"></li><div class="hide note" id="alm">Алмазные вещи (броня, инструменты, оружие) жители будут продавать не только за изумруды, а и за алмазы (цена у жителей будет меньше чем при крафте на верстаке), книги зачарования будут продаваться за лазурит. Все инструменты и вся броня продаются без зачарований</div><li>Установлен датапак BlazeAndCave's, добавляющий в игру около 1000 новых достижений</li><li>Уменьшен шанс дропа тотема с призывателя со 100% до 5%</li><li>Добавлен крафт для мешков<img src="img/more.svg" height="20" style="vertical-align: middle; margin-left: 5px; transition: transform 0.4s;" onclick="onoff('meshok', this)"></li><div class="hide note" id="meshok">крафт мешка: <img src="img/meshok.webp" height="100" style="vertical-align: middle;"></div><li>Странствующие торговцы иногда могут продать сундук с картой древнего города</li><li>Добавлен ресурспак сервера<img src="img/more.svg" height="20" style="vertical-align: middle; margin-left: 5px; transition: transform 0.4s;" onclick="onoff('rp', this)"></li><div class="hide note" id="rp">В ресурспак включены: различные шляпы, появляющиеся при переименовании тыкв, карты (переименованая бумага). Названия шляп можно посмотреть <a href="/hats.html" style="text-decoration: none;">здесь</a></div><li>Игроки при убийстве дропают головы</li><li>Редактор стоек для брони<img src="img/more.svg" height="20" style="vertical-align: middle; margin-left: 5px; transition: transform 0.4s;" onclick="onoff('bron', this)"></li><div class="hide note" id="bron">Нажатие ПКМ c кремнем с руке открывает интуитивно понятное меню управления</div><li>Баннеры можно располагать горизонтально как флаги<img src="img/more.svg" height="20" style="vertical-align: middle; margin-left: 5px; transition: transform 0.4s;" onclick="onoff('flag', this)"></li><div class="hide note" id="flag">Поддерживаемые блоки: заборы, стены, стеклянные панели, железные решетки, громоотводы. Присядьте и щелкните баннер на одном из поддерживаемых блоков, чтобы разместить его в качестве флага</div><li>У игрока с невидимостью нет частиц эффекта</li></ul></div><div id="rules" style="border-top: silver dashed 2px;"><div style="font-size: 25px;">Основные правила</div><div class="flex"><div class="toDoElem"><img src="img/rules/nogrif.webp" style="height: 80%;"><div style="font-size: larger;">Запрещен гриф</div></div><div class="toDoElem"><img src="img/rules/nocheat.webp" style="height: 80%;"><div style="font-size: larger;">Запрещены читы</div></div><div class="toDoElem"><img src="img/rules/tveanks.webp" style="height: 80%;"><div style="font-size: larger;">Нельзя иметь более 1 аккаунта</div></div><div class="toDoElem"><img src="img/rules/noToxic.webp" style="height: 80%;"><div style="font-size: larger;">Нельзя оскорблять и токсичить в чатах</div></div></div><div style="font-size: 20px; margin: 20px 0 10px 0">С более подробным списком правил можно ознакомиться в дискорде</div></div><div id="admins"><div style="font-size: larger; color: white;" class="hide_on_phone">Администрация</div><div style="font-size: larger; color: white;" class="show_on_phone">Создатели сервера</div><div id="adminFlex"><a class="admin" href="https://i.ibb.co/7bzCFGk/84428eae99c40b78a6d7dccd6805fc76-c5-720x720.jpg"><img src="img/admins/Ded.webp" style="display: inline-block; vertical-align: middle;"><div style="display: inline-block; vertical-align: middle;">DedKob <br>Основатель </div></a><a class="admin" href="https://i.ibb.co/KXTBj1S/body.webp"><img src="img/admins/Vanya.webp" style="display: inline-block; vertical-align: middle;"><div style="display: inline-block; vertical-align: middle;">FunnyVanya <br>Император </div></a><a class="admin hide_on_phone" href="https://i.ibb.co/X3Wz5D6/941764348.webp"><img src="img/admins/Tis.webp" style="display: inline-block; vertical-align: middle;"><div style="display: inline-block; vertical-align: middle;">ArchTeese <br>Примарх </div></a><a class="admin hide_on_phone" href="https://i.ibb.co/7ryFTF1/1619742318-7-oir-mobi-p-dobrii-medved-zhivotnie-krasivo-foto-7.jpg"><img src="img/admins/Yan.webp" style="display: inline-block; vertical-align: middle;"><div style="display: inline-block; vertical-align: middle;">Yan_Gaming <br>Верховный жрец </div></a><a class="admin hide_on_phone" href="https://i.ibb.co/9qW4PDT/ea43ce81-6cb2-479d-8c2e-fadd443af6f6.webp"><img src="img/admins/Unirit.webp" style="display: inline-block; vertical-align: middle;"><div style="display: inline-block; vertical-align: middle;">Uniritial <br>Созьдаль сайтикь </div></a></div></div><script>function hide(id){ document.getElementById(id).classList.add("hide");} function show(id){ document.getElementById(id).classList.remove("hide");} function onoff(id, thiS){ if(document.getElementById(id).classList.contains("hide")){ thiS.classList.add("rotate"); show(id);} else{ thiS.classList.remove("rotate"); hide(id);}} window.onload=function load(){ if(Cookies.get('hided') !="true"){ document.styleSheets[0].deleteRule(6);}}; function hidenoruby(){ document.getElementsByClassName("NoRuBy")[0].classList.add("opahide"); Cookies.set('hided', 'true',{ expires: 7})} </script><script async src="https://www.googletagmanager.com/gtag/js?id=G-42DLHBGV89"></script><script>window.dataLayer=window.dataLayer || []; function gtag(){dataLayer.push(arguments)} gtag('js', new Date()); gtag('config', 'G-42DLHBGV89'); </script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>&#12300;Stonelight&#12301;</title>
+    <!--<link rel="canonical" href="https://stonelightmc.github.io/index.html">-->
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles_index.css">
+    <meta name="viewport" content="width=device-width; initial-scale=1">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
+    <script nomodule defer src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-42DLHBGV89"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-42DLHBGV89');
+    </script>
+</head>
+
+<body>
+    <header>
+        <div id="rHeader">
+            <div style="justify-content: flex-start;">
+                <img src="img/logo.webp" height="80">
+                <span style="font-size: 25px; color: #4596ff;" class="hide_on_phone">Stonelight</span>
+            </div>
+            <div id="pages">
+                <a href="/index.html" class="checked">Главная</a>
+                <a href="/places.html">Постройки</a>
+                <a href="/klans.html">Кланы</a>
+            </div>
+            <div style="justify-content: flex-end;">
+                <span class="NoRuBy hide_on_phone" onclick="hidenoruby()"><span id="nohover">Сервер недоступен на территории России и Беларуси</span><div id="onhover"><span>Закрыть</span></div></span>
+            </div>
+        </div>
+        
+    </header>
+    <div id="description">
+        <div id="bol-blue">
+            <h1 id="mainD">StoneLight - ванильный сервер без приватов и доната</h1>
+            <div id="secD">Выживайте, вступайте в кланы, находите новых друзей и просто
+                весело проводите время :D</div>
+            <div style="display: flex; align-items: center;">
+                <a class="white link" href="https://discord.gg/GCfnjCsurR" style="margin-right: 10px;">
+                    <img src="img/discord.webp" height="40px" style="margin-right: 10px; vertical-align: middle;">
+                    <span style="vertical-align: middle; font-size: larger;">Вступить в Дискорд</span>
+                </a>
+                <!--<div class="white">
+                    <img src="img/more.webp" height="32px" style="margin-right: 10px; vertical-align: middle;">
+                    <span style="vertical-align: middle; font-size: larger;">Подробнее</span>
+                </div>-->
+            </div>
+            <div class="show_on_phone" style="color: red; font-size: larger;">Сервер недоступен на территории России и Беларуси</div>
+        </div>
+        <div id="blue_fon">
+        </div>
+        <img src="img/banner.webp" id="renImg" class="hide_on_phone" style="height: 100%; z-index: -1;">
+    </div>
+    <div class="flex" id="toDo">
+        <div class="toDoElem">
+            <img src="img/do/ork-kopaet.webp" style="height: 80%;">
+            <div style="font-size: larger;">Развивайтесь</div>
+        </div>
+        <div class="toDoElem">
+            <img src="img/do/klan.webp" style="width: 100%;">
+            <div style="font-size: larger;">Присоединяйтесь к кланам</div>
+            
+        </div>
+        <div class="toDoElem">
+            <img src="img/do/achivka.webp" style="height: 60%;">
+            <div style="font-size: larger;">Выполняйте интересные ачивки</div>
+        </div>
+        <div class="toDoElem">
+            <img src="img/do/magaz.webp" style="width: 100%;">
+            <div style="font-size: larger;">Открывайте собственные магазины</div>
+        </div>
+        <div class="toDoElem">
+            <img src="img/do/dom.webp" style="width: 100%;">
+            <div style="font-size: larger;">Создавайте маштабные проекты</div>
+        </div>
+    </div>
+    <div id="pirat">
+        <div>
+            На сервер можно зайти с пиратской версии Java или с Bedrock Minecraft-а
+            <br>
+            IP: stonelight.apexmc.co
+        </div>
+    </div>
+    <div id="lblue">
+        <span style="font-size: 25px;">StoneLight - сервер ванильного выживания, имеющий некоторые дополнения и небольшие изменения игровых механик.<br> На сервере: </span>
+        <ul style="text-align: left; font-size: larger; padding: 0; margin-left: 20px;">
+            <li>Измененены некоторые торги у жителей<img src="img/more.svg" height="20" style="vertical-align: middle; margin-left: 5px; transition: transform 0.4s;" onclick="onoff('alm', this)"></li>
+            <div class="hide note" id="alm">Алмазные вещи (броня, инструменты, оружие) жители будут продавать не только за изумруды, а и за алмазы (цена у жителей будет меньше чем при крафте на верстаке), книги зачарования будут продаваться за лазурит. Все инструменты и вся броня продаются без зачарований</div>
+            <li>Установлен датапак BlazeAndCave's, добавляющий в игру около 1000 новых достижений</li>
+            <li>Уменьшен шанс дропа тотема с призывателя со 100% до 5%</li>
+            <li>Добавлен крафт для мешков<img src="img/more.svg" height="20" style="vertical-align: middle; margin-left: 5px; transition: transform 0.4s;" onclick="onoff('meshok', this)"></li>
+            <div class="hide note" id="meshok">крафт мешка: <img src="img/meshok.webp" height="100" style="vertical-align: middle;"></div>
+            <li>Странствующие торговцы иногда могут продать сундук с картой древнего города</li>
+            <li>Добавлен ресурспак сервера<img src="img/more.svg" height="20" style="vertical-align: middle; margin-left: 5px; transition: transform 0.4s;"  onclick="onoff('rp', this)"></li>
+            <div class="hide note" id="rp">В ресурспак включены: различные шляпы, появляющиеся при переименовании тыкв, карты (переименованая бумага). Названия шляп можно посмотреть <a href="/hats.html" style="text-decoration: none;">здесь</a></div>
+            <li>Игроки при убийстве дропают головы</li>
+            <li>Редактор стоек для брони<img src="img/more.svg" height="20" style="vertical-align: middle; margin-left: 5px; transition: transform 0.4s;" onclick="onoff('bron', this)"></li>
+            <div class="hide note" id="bron">Нажатие ПКМ c кремнем с руке открывает интуитивно понятное меню управления</div>
+            <li>Баннеры можно располагать горизонтально как флаги<img src="img/more.svg" height="20" style="vertical-align: middle; margin-left: 5px; transition: transform 0.4s;" onclick="onoff('flag', this)"></li>
+            <div class="hide note" id="flag">Поддерживаемые блоки: заборы, стены, стеклянные панели, железные решетки, громоотводы. Присядьте и щелкните баннер на одном из поддерживаемых блоков, чтобы разместить его в качестве флага</div>
+            <li>У игрока с невидимостью нет частиц эффекта</li>
+        </ul>
+    </div>
+    <div id="rules" style="border-top: silver dashed 2px;">
+        <div style="font-size: 25px;">Основные правила</div>
+        <div class="flex">
+            <div class="toDoElem">
+                <img src="img/rules/nogrif.webp" style="height: 80%;">
+                <div style="font-size: larger;">Запрещен гриф</div>
+            </div>
+            <div class="toDoElem">
+                <img src="img/rules/nocheat.webp" style="height: 80%;">
+                <div style="font-size: larger;">Запрещены читы</div>
+            </div>
+            <div class="toDoElem">
+                <img src="img/rules/tveanks.webp" style="height: 80%;">
+                <div style="font-size: larger;">Нельзя иметь более 1 аккаунта</div>
+            </div>
+            <div class="toDoElem">
+                <img src="img/rules/noToxic.webp" style="height: 80%;">
+                <div style="font-size: larger;">Нельзя оскорблять и токсичить в чатах</div>
+            </div>
+        </div>
+        <div style="font-size: 20px; margin: 20px 0 10px 0">С более подробным списком правил можно ознакомиться в дискорде</div>
+    </div>
+    <div id="admins">
+        <div style="font-size: larger; color: white;" class="hide_on_phone">Администрация</div>
+        <div style="font-size: larger; color: white;" class="show_on_phone">Создатели сервера</div>
+        <div id="adminFlex">
+            <a class="admin" href="https://i.ibb.co/7bzCFGk/84428eae99c40b78a6d7dccd6805fc76-c5-720x720.jpg">
+                <img src="img/admins/Ded.webp" style="display: inline-block; vertical-align: middle;">
+                <div style="display: inline-block; vertical-align: middle;">
+                    DedKob
+                    <br>
+                    Основатель
+                </div>
+            </a>
+            <a class="admin" href="https://i.ibb.co/KXTBj1S/body.webp">
+                <img src="img/admins/Vanya.webp" style="display: inline-block; vertical-align: middle;">
+                <div style="display: inline-block; vertical-align: middle;">
+                    FunnyVanya
+                    <br>
+                    Император
+                </div>
+            </a>
+            <a class="admin hide_on_phone" href="https://i.ibb.co/X3Wz5D6/941764348.webp">
+                <img src="img/admins/Tis.webp" style="display: inline-block; vertical-align: middle;">
+                <div style="display: inline-block; vertical-align: middle;">
+                    ArchTeese
+                    <br>
+                    Примарх
+                </div>
+            </a>
+            <a class="admin hide_on_phone" href="https://i.ibb.co/7ryFTF1/1619742318-7-oir-mobi-p-dobrii-medved-zhivotnie-krasivo-foto-7.jpg">
+                <img src="img/admins/Yan.webp" style="display: inline-block; vertical-align: middle;">
+                <div style="display: inline-block; vertical-align: middle;">
+                    Yan_Gaming
+                    <br>
+                    Верховный жрец
+                </div>
+            </a>
+            <a class="admin hide_on_phone" href="https://i.ibb.co/9qW4PDT/ea43ce81-6cb2-479d-8c2e-fadd443af6f6.webp">
+                <img src="img/admins/Unirit.webp" style="display: inline-block; vertical-align: middle;">
+                <div style="display: inline-block; vertical-align: middle;">
+                    Uniritial
+                    <br>
+                    Созьдаль сайтикь
+                </div>
+            </a>
+        </div>
+    </div>
+    <script>
+        function hide(id) {
+            document.getElementById(id).classList.add("hide");
+        }
+        function show(id) {
+            document.getElementById(id).classList.remove("hide");
+        }
+        function onoff(id, thiS) {
+            if(document.getElementById(id).classList.contains("hide")) {
+                thiS.classList.add("rotate");
+                show(id);
+            }
+            else {
+                thiS.classList.remove("rotate");
+                hide(id);
+            }
+        }
+        window.onload = function load() {
+            if(Cookies.get('hided') != "true") {
+               document.styleSheets[0].deleteRule(6);
+            }
+        };
+        function hidenoruby() {
+            document.getElementsByClassName("NoRuBy")[0].classList.add("opahide");
+            Cookies.set('hided', 'true', { expires: 7 })
+        }
+    </script>
+</body>
+
+</html>
