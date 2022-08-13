@@ -21,7 +21,7 @@ select:focus {
     border: #000 solid 1px; 
     padding: 12px 20px 20px 20px;
     max-height: 300px;
-    overflow-x: scroll;
+    overflow-y: auto;
 }
 
 .placeChanger {
@@ -53,6 +53,7 @@ select:focus {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
+    justify-content: center;
 }
 
 .place {
@@ -60,7 +61,7 @@ select:focus {
     margin: 0px 10px 10px 0;
     border: #000000 solid 1px;
     border-radius: 10px;
-    max-width: 185px;
+    max-width: 220px;
 }
 
 .place>:first-child {

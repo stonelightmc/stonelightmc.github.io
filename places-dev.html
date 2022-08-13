@@ -114,14 +114,7 @@
             out.appendChild(temp);
             return out;
         }
-        function hidenoruby() {
-            document.getElementsByClassName("NoRuBy")[0].classList.add("opahide");
-            Cookies.set('hided', 'true', { expires: 7 })
-        }
         function loadContent() {
-            if(Cookies.get('hided') != "true") {
-               document.styleSheets[0].deleteRule(6);
-            }
             var xhr = new XMLHttpRequest();
             xhr.open('GET', 'buildings.json', false);
             xhr.send();
