@@ -26,8 +26,9 @@
     "Jamerrr": {
         "color": "#000"
     },
-    "Kotic_top777": {
-        "color": "#000"
+    "kotic_top777": {
+        "color": "#000",
+        "clearNick": "Kotic_top777"
     },
     "Lavro": {
         "color": "#000"
@@ -38,7 +39,22 @@
     "Qwaroon1": {
         "color": "#000"
     },
-    "Rokmaks": {
+    "_Rokmaks_": {
+        "color": "#000",
+        "clearNick": "Rokmaks"
+    },
+    "Werspam": {
         "color": "#000"
+    },
+    "_TheGhost_": {
+        "color": "#000",
+        "clearNick": "TheGhost"
+    },
+    "trakster1": {
+        "color": "#000"
+    },
+    ".FoXizMoLdov": {
+        "color": "#000",
+        "clearNick": "MrFox"
     }
 }

@@ -2,12 +2,13 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>&#12300;Stonelight&#12301;</title>
     <link rel="canonical" href="https://stonelightmc.github.io/klans.html">
     <link rel="shortcut icon" href="/img/favicon.ico">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="styles_places.css">
-    <meta name="viewport" content="width=device-width; initial-scale=1">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-42DLHBGV89"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -19,7 +20,7 @@
 
 <body>
     <header>
-        <div id="rHeader">
+        <nav>
             <div style="justify-content: flex-start;">
                 <img src="img/logo.webp" height="80">
                 <span style="font-size: 25px; color: #4596ff;" class="hide_on_phone">StoneLight</span>
@@ -32,7 +33,7 @@
             <div style="justify-content: flex-end;">
                 <span class="NoRuBy hide_on_phone" onclick="hidenoruby()"><span id="nohover">Сервер недоступен на территории России и Беларуси</span><div id="onhover"><span>Закрыть</span></div></span>
             </div>
-        </div>
+        </nav>
     </header>
     <div id="places-desc">
         <span id="mainD">Кланы</span>
@@ -59,7 +60,7 @@
         function viewTrades() {
             var players;
             json.forEach(element => {
-                if(element["name"] == event.currentTarget.parentElement.children[0].innerHTML) {
+                if(element["name"] == event.currentTarget.parentElement.children[0].textContent) {
                     players = element["players"];
                 }
             });
@@ -69,21 +70,23 @@
             document.getElementById("modal").classList.remove("hide");
         }
         function createPlayer(nickname) {
-          var out = document.createElement("div");
-          out.classList.add("playerBorder");
-          var temp = document.createElement("img");
-          if(players.hasOwnProperty(nickname)) {
-            temp.src = "/img/skins/" + nickname + "/1.webp";
-          } else {
-            temp.src = "/img/skins/no.webp";
-          }
-          temp.style.verticalAlign = "middle";
-          out.appendChild(temp);
-          temp = document.createElement("span");
-          temp.textContent = nickname;
-          temp.style.verticalAlign = "middle";
-          out.appendChild(temp);
-          return out;
+            var out = document.createElement("div");
+            out.classList.add("playerBorder");
+            var temp = document.createElement("img");
+            let clearNick;
+            if (players.hasOwnProperty(nickname)) {
+                temp.src = "/img/skins/" + nickname + "/1.webp";
+                clearNick = players[nickname]["clearNick"];
+            } else {
+                temp.src = "/img/skins/no.webp";
+            }
+            temp.style.verticalAlign = "middle";
+            out.appendChild(temp);
+            temp = document.createElement("span");
+            temp.textContent = clearNick != undefined ? clearNick : nickname;
+            temp.style.verticalAlign = "middle";
+            out.appendChild(temp);
+            return out;
         }
         function loadOwners() {
             let klansArr = document.getElementsByClassName("place");
@@ -111,7 +114,7 @@
                     temp.textContent = json[i]["name"];
                     out.appendChild(temp);
                     temp = document.createElement("div");
-                    temp.textContent = json[i]["desc"];
+                    temp.innerHTML = json[i]["desc"];
                     temp.style.color = "#777";
                     out.appendChild(temp);
                     temp = document.createElement("div");

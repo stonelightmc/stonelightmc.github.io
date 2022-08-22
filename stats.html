@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>&#12300;Stonelight&#12301;</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        #best {
+            height: 115px;
+            border-bottom: #000 solid 1px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .bestPl {
+            width: 250px;
+        }
+        #players {
+            padding: 10px 20px;
+        }
+        .playerBorder {
+            display: inline-block;
+        }
+        .playerBorder.card {
+            padding: 8px;
+            margin-right: 5px;
+            border-radius: 12px;
+        }
+        .playerBorder.card img {
+            height: 60px;
+        }
+        .divider {
+            height: 90px;
+            width: 1px;
+            background-color: #000;
+        }
+        .mar-bot {
+            margin-bottom: 5px;
+        }
+    </style>
+    <script>
+        var stats;
+        function closeTrades() {
+            document.getElementById("modal-content").innerHTML = "<div class=\"close\" onclick=\"closeTrades()\"></div>";
+            document.getElementById("modal").classList.add("hide");
+        }
+        function createPlayer(nickname) {
+            var out = document.createElement("div");
+            out.classList.add("playerBorder");
+            var temp = document.createElement("img");
+            let clearNick;
+            if (players.hasOwnProperty(nickname)) {
+                temp.src = "/img/skins/" + nickname + "/1.webp";
+                clearNick = players[nickname]["clearNick"];
+            } else {
+                temp.src = "/img/skins/no.webp";
+            }
+            temp.style.verticalAlign = "middle";
+            out.appendChild(temp);
+            temp = document.createElement("span");
+            temp.textContent = nickname;
+            temp.style.verticalAlign = "middle";
+            out.appendChild(temp);
+            if(clearNick != undefined) {
+                temp = document.createElement("div");
+                temp.textContent = clearNick;
+                out.lastChild.style.display = "none";
+                out.appendChild(temp);
+            }
+            return out;
+        }
+        function createCard(nickname, prefix, number, suffix) {
+            var out = document.createElement("div");
+            out.classList.add("playerBorder");
+            out.classList.add("card");
+            out.onclick = playerDetails;
+            let temp = document.createElement("img");
+            let clearNick;
+            if (players.hasOwnProperty(nickname)) {
+                temp.src = "/img/skins/" + nickname + "/1.webp";
+                clearNick = players[nickname]["clearNick"];
+            } else {
+                temp.src = "/img/skins/no.webp";
+            }
+            temp.style.verticalAlign = "middle";
+            out.appendChild(temp);
+            temp = document.createElement("div");
+            temp.style.verticalAlign = "middle";
+            temp.style.display = "inline-block";
+            let temp2 = document.createElement("div");
+            temp2.textContent = nickname;
+            temp.appendChild(temp2);
+            if(clearNick != undefined) {
+                temp2 = document.createElement("div");
+                temp2.textContent = clearNick;
+                temp.lastChild.style.display = "none";
+                temp.appendChild(temp2);
+            }
+            temp2 = document.createElement("div");
+            temp2.textContent = prefix + number + suffix;
+            temp.appendChild(temp2);
+            out.appendChild(temp);
+            return out;
+        }
+        function playerDetails() {
+            document.getElementById("modal").classList.remove("hide");
+            let content = document.getElementById("modal-content");
+            let playerName = event.currentTarget.children[1].children[0].innerHTML;
+            let playerStats;
+            for (let i = 0; i < stats["players"].length; i++) {
+                if(stats["players"][i]["n"] == playerName) {
+                    playerStats = stats["players"][i];
+                    break;
+                }
+            }
+            content.insertAdjacentHTML("beforeend", "<div style=\"display: flex; align-items:\"></div>");
+            content.lastChild.appendChild(createPlayer(playerName));
+            content.lastChild.lastChild.style.display = "flex";
+            content.lastChild.lastChild.style.alignItems = "center";
+            let temp = document.createElement("div");
+            temp.style.marginLeft = "5px";
+            temp.className = "playerBorder";
+            temp.insertAdjacentHTML("afterbegin", "<div>Наиграл " + Math.round(playerStats["t"] / 7200) / 10 + "ч</div><div>Имеет " + playerStats["l"] + " уровень опыта</div><div>Сломал " + playerStats["b"] + " блоков</div>");
+            content.lastChild.appendChild(temp);
+            temp = document.createElement("div");
+            temp.className = "playerBorder";
+            temp.style.width = "calc(100% - 8px)";  
+            temp.style.marginBottom = "0";
+            temp.style.padding = "40px 10px";
+            temp.textContent = "В разработке...";
+            content.appendChild(temp);
+        }
+        function loadPlayers() {
+            var playersReq = new XMLHttpRequest();
+            playersReq.open('GET', 'players.json');
+            playersReq.onload = function () {
+                if (playersReq.status != 200) {
+                    alert("Ошибка загрузки игроков");
+                } else {
+                    players = JSON.parse(playersReq.responseText);
+                    playersLoaded();
+                }
+            };
+            playersReq.send();
+        }
+        function playersLoaded() {
+            let texts = [["Наиграл ", "ч"], ["", " уровень опыта"], ["Сломал ", " блоков"]];
+            let childs = document.querySelectorAll("#best .bestPl");
+            for (let i = 0; i < childs.length; i++) {
+                childs[i].appendChild(createCard(stats["best"][i]["name"], texts[i][0], stats["best"][i]["number"], texts[i][1]));
+                childs[i].lastChild.firstChild.style.height = "40px";
+            }
+            let pl = stats["players"];
+            for (let i = 0; i < pl.length; i++) {
+                document.getElementById("players").appendChild(createCard(pl[i]["n"], "Наиграл ", Math.round(pl[i]["t"] / 7200) / 10, "ч"));
+            }
+        }
+        window.onload = function() {
+            var playersReq = new XMLHttpRequest();
+            playersReq.open('GET', 'http://stonelightapi.ddns.is74.ru:8080/getPlayers');
+            playersReq.onload = function () {
+                if (playersReq.status != 200) {
+                    alert("Ошибка загрузки игроков");
+                } else {
+                    stats = JSON.parse(playersReq.responseText);
+                    stats["players"].sort((a, b) => a["t"] > b["t"] ? -1 : 1);
+                    loadPlayers();
+                }
+            };
+            playersReq.send();
+            
+        };
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div style="justify-content: flex-start;">
+                <img src="img/logo.webp" height="80">
+                <span style="font-size: 25px; color: #4596ff;" class="hide_on_phone">StoneLight</span>
+            </div>
+            <div id="pages">
+                <a href="/index.html">Главная</a>
+                <a href="/places.html">Постройки</a>
+                <a href="/klans.html">Кланы</a>
+                <a href="/stats.html" class="checked">Статистика</a>
+            </div>
+            <div style="justify-content: flex-end;"></div>
+        </nav>
+    </header>
+    <div id="places-desc">
+        <span id="mainD">Статистика игроков</span>
+    </div>
+    <div id="best" class="hide_on_phone">
+        <div class="bestPl"><div class="mar-bot">Наибольшее кол-во часов проведено в игре</div></div>
+        <div class="divider"></div>
+        <div class="bestPl"><div class="mar-bot">Наибольший уровень опыта</div></div>
+        <div class="divider"></div>
+        <div class="bestPl"><div class="mar-bot">Самое большое количество сломаных блоков</div></div>
+    </div>
+    <div id="players">
+
+    </div>
+    <div id="modal" class="hide">
+        <div id="modal-content">
+            <div id="playerList">
+            </div>
+            <div class="close" onclick="closeTrades()"></div>
+        </div>
+        <div id="blacker"></div>
+    </div>
+</body>
+</html>
