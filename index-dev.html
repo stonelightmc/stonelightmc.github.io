@@ -24,9 +24,9 @@
         <nav>
             <div style="justify-content: flex-start;">
                 <img src="img/logo.webp" height="80">
-                <span style="font-size: 25px; color: #4596ff;" class="hide_on_phone">Stonelight</span>
+                <span style="font-size: 25px; color: #4596ff;">Stonelight</span>
             </div>
-            <div id="pages">
+            <div id="pages" class="hide_on_phone">
                 <a href="/index.html" class="checked">Главная</a>
                 <a href="/klans.html">Кланы</a>
                 <a href="/stats.html">Статистика</a>
@@ -36,6 +36,12 @@
                 <span class="NoRuBy hide_on_phone" onclick="hidenoruby()"><span id="nohover">Сервер недоступен на территории России и Беларуси</span><div id="onhover"><span>Закрыть</span></div></span>
             </div>
         </nav>
+        <div id="pages" class="show_on_phone">
+            <a href="/index.html" class="checked">Главная</a>
+            <a href="/klans.html">Кланы</a>
+            <a href="/stats.html">Статистика</a>
+            <a href="/places.html">Постройки</a>
+        </div>
     </header>
     <div id="description">
         <div id="bol-blue">

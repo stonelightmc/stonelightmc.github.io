@@ -126,6 +126,7 @@ nav>div {
 #pages {
     justify-content: center;
     font-size: 18px;
+    white-space: nowrap;
 }
 
 #pages a {
@@ -133,6 +134,7 @@ nav>div {
     color: unset;
     text-decoration: none;
     line-height: 80px;
+    display: inline-block;
 }
 
 #pages a.checked {
@@ -186,6 +188,26 @@ nav>div {
         display: none !important;
     }
 
+    nav > div {
+        flex: initial;
+    }
+
+    #pages a.checked {
+        background: linear-gradient(180deg, #ffffff 95%, #5791eb 1%);
+    }
+
+    #pages a {
+        line-height: 30px;
+        margin: 0 5px;
+    }
+
+    #pages {
+        height: 30px;
+        font-size: 15px;
+        margin-right: 0;
+        border-top: #000 solid 1px;
+    }
+
     .NoRuBy {
         margin: 5px 0;
     }
@@ -196,8 +218,5 @@ nav>div {
 
     #mainD {
         font-size: 30px;
-    }
-    #pages {
-        margin-right: 0;
     }
 }
