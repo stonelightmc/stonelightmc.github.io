@@ -46,9 +46,10 @@ nav>div {
 
 .playerBorder {
     border: #000 solid 1px;
-    padding: 4px;
+    padding: 8px;
     border-radius: 8px;
     margin-bottom: 7px;
+    white-space: nowrap;
 }
 
 .playerBorder img {
