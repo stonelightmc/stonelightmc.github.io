@@ -10,6 +10,10 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="styles_places.css">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-42DLHBGV89"></script>
+    <script async src="//static.getclicky.com/101378265.js"></script>
+    <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101378265ns.gif" /></p></noscript>
+    <script src="lang.js"></script>
+    <script src="js.cookie.js"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -29,31 +33,31 @@
                 <span style="font-size: 25px; color: #4596ff;">Stonelight</span>
             </div>
             <div id="pages" class="hide_on_phone">
-                <a href="/index.html">Главная</a>
-                <a href="/klans.html">Кланы</a>
+                <a href="/index.html" class="trans-main">Главная</a>
+                <a href="/klans.html" class="trans-klans">Кланы</a>
                 <a href="/stats.html">Статистика</a>
-                <a href="/places.html" class="checked">Постройки</a>
+                <a href="/places.html" class="checked trans-builds">Постройки</a>
             </div>
             <div style="justify-content: flex-end;">
                 <span class="NoRuBy hide_on_phone" onclick="hidenoruby()"><span id="nohover">Сервер недоступен на территории России и Беларуси</span><div id="onhover"><span>Закрыть</span></div></span>
             </div>
         </nav>
         <div id="pages" class="show_on_phone">
-            <a href="/index.html">Главная</a>
-            <a href="/klans.html">Кланы</a>
+            <a href="/index.html" class="trans-main">Главная</a>
+            <a href="/klans.html" class="trans-klans">Кланы</a>
             <a href="/stats.html">Статистика</a>
-            <a href="/places.html" class="checked">Постройки</a>
+            <a href="/places.html" class="checked trans-builds">Постройки</a>
         </div>
     </header>
     <div id="places-desc">
-        <span id="mainD">Постройки</span>
+        <span id="mainD" class="trans-builds">Постройки</span>
     </div>
     <div style="display: flex; align-items: center; justify-content: center;">
-        <div class="placeChanger checked" onclick="changeContent('a', this)">Всё</div>
-        <div class="placeChanger" onclick="changeContent('s', this)">Магазины</div>
-        <div class="placeChanger" onclick="changeContent('b', this)">Базы</div>
-        <div class="placeChanger" onclick="changeContent('p', this)">Постройки </div>
-        <div class="placeChanger" onclick="changeContent('o', this)">Другое</div>
+        <div class="placeChanger checked trans-all" onclick="changeContent('a', this)">Всё</div>
+        <div class="placeChanger trans-shops" onclick="changeContent('s', this)">Магазины</div>
+        <div class="placeChanger trans-bases" onclick="changeContent('b', this)">Базы</div>
+        <div class="placeChanger trans-builds" onclick="changeContent('p', this)">Постройки </div>
+        <div class="placeChanger trans-other" onclick="changeContent('o', this)">Другое</div>
     </div>
     <div id="places">
     </div>
@@ -67,6 +71,7 @@
         <div id="blacker"></div>
     </div>
     <script>
+        var lang;
         window.onload = loadContent;
         function changeContent(type, thiS) {
             document.querySelector(".placeChanger.checked").classList.remove("checked");
@@ -122,6 +127,7 @@
             return out;
         }
         function loadContent() {
+            lang = Cookies.get("lang") == undefined ? "ru" : Cookies.get("lang");
             var xhr = new XMLHttpRequest();
             xhr.open('GET', 'buildings.json', false);
             xhr.send();
@@ -133,7 +139,7 @@
                     var out = document.createElement("div");
                     out.classList.add("place");
                     var temp = document.createElement("div");
-                    temp.textContent = json[i]["name"];
+                    temp.textContent = lang != "ru" ? json[i]["name-" + lang] : json[i]["name"];
                     out.appendChild(temp);
                     temp = document.createElement("img");
                     temp.style.width = "100%";
@@ -148,10 +154,10 @@
                             temp.textContent = "База";
                             break;
                         case "p":
-                            temp.textContent = "Постройка";
+                            temp.textContent = lang == "ua" ? "Споруда" : "Постройка";
                             break;
                         default:
-                            temp.textContent = json[i]["type"];
+                            temp.textContent = lang == "ru" ? json[i]["type"] : json[i]["type-" + lang];
                             out.classList.add("o");
                             break;
                     }
@@ -171,13 +177,13 @@
                     if(json[i]["type"] == "s"){
                         out.onclick = viewTrades;
                         temp = document.createElement("div");
-                        temp.textContent = "Посмотреть цены";
+                        temp.textContent = lang == "ua" ? "Переглянути ціни" : "Посмотреть цены";
                         temp.style.color = "#0000ff";
                         temp.style.cursor = "pointer";
                         out.appendChild(temp);
                     }
                     temp = document.createElement("div");
-                    temp.textContent = "Владелец: " + json[i]["owner"];
+                    temp.textContent = (lang == "ua" ? "Власник: " : "Владелец: ") + json[i]["owner"];
                     out.appendChild(temp);
                     document.getElementById("places").appendChild(out);
                 }

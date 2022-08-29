@@ -9,7 +9,11 @@
     <link rel="shortcut icon" href="/img/favicon.ico">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="styles_places.css">
+    <script src="js.cookie.js"></script>
+    <script src="lang.js"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-42DLHBGV89"></script>
+    <script async src="//static.getclicky.com/101378265.js"></script>
+    <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101378265ns.gif" /></p></noscript>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -26,31 +30,29 @@
                 <span style="font-size: 25px; color: #4596ff;">Stonelight</span>
             </div>
             <div id="pages" class="hide_on_phone">
-                <a href="/index.html">Главная</a>
-                <a href="/klans.html" class="checked">Кланы</a>
+                <a href="/index.html" class="trans-main">Главная</a>
+                <a href="/klans.html" class="checked trans-klans">Кланы</a>
                 <a href="/stats.html">Статистика</a>
-                <a href="/places.html">Постройки</a>
+                <a href="/places.html" class="trans-builds">Постройки</a>
             </div>
-            <div style="justify-content: flex-end;">
-                <span class="NoRuBy hide_on_phone" onclick="hidenoruby()"><span id="nohover">Сервер недоступен на территории России и Беларуси</span><div id="onhover"><span>Закрыть</span></div></span>
-            </div>
+            <div style="justify-content: flex-end; opacity: 0;"></div>
         </nav>
         <div id="pages" class="show_on_phone">
-            <a href="/index.html">Главная</a>
-            <a href="/klans.html" class="checked">Кланы</a>
-            <a href="/stats.html">Статистика</a>
-            <a href="/places.html">Постройки</a>
+            <a href="/index.html" class="trans-main">Главная</a>
+            <a href="/klans.html" class="checked trans-klans">Кланы</a>
+            <a href="/stats.html" class="trans-stats">Статистика</a>
+            <a href="/places.html" class="trans-builds">Постройки</a>
         </div>
     </header>
     <div id="places-desc">
-        <span id="mainD">Кланы</span>
+        <span id="mainD" class="trans-klans">Кланы</span>
     </div>
      <div id="places">
     </div>
     <div id="modal" class="hide">
         <div id="modal-content">
             <div id="playerList">
-                <span style="margin-bottom: 5px; font-size: larger;">Участники</span>
+                <span style="margin-bottom: 5px; font-size: larger;" class="trans-members">Участники</span>
             </div>
             <div class="close" onclick="closeTrades()"></div>
         </div>
@@ -59,9 +61,14 @@
     <script>
         var json;
         var players;
+        var lang;
         window.onload = loadContent;
         function closeTrades() {
-            document.getElementById("playerList").innerHTML = "<span style=\"margin-bottom: 5px; font-size: larger;\">Участники</span>";
+            let arr = document.getElementById("playerList").children;
+            let length = arr.length - 1;
+            for (let i = 0; i < length; i++) {
+                arr[1].remove();
+            }
             document.getElementById("modal").classList.add("hide");
         }
         function viewTrades() {
@@ -107,6 +114,7 @@
             }
         }
         function loadContent() {
+            lang = Cookies.get("lang") == undefined ? "ru" : Cookies.get("lang");
             var klansReq = new XMLHttpRequest();
             klansReq.open('GET', 'klans.json', false);
             klansReq.send();
@@ -119,13 +127,31 @@
                     out.classList.add("place");
                     var temp = document.createElement("div");
                     temp.textContent = json[i]["name"];
+                    temp.style.margin = "10px 10px 4px 10px";
+                    temp.style.fontSize = "20px";
                     out.appendChild(temp);
+                    if(lang != "ru") {
+                        out.lastChild.classList = "hide";
+                        temp = document.createElement("div");
+                        temp.textContent = json[i]["name-" + lang];
+                        temp.style.margin = "10px 10px 4px 10px";
+                        temp.style.fontSize = "20px";
+                        out.appendChild(temp);
+                    }
                     temp = document.createElement("div");
-                    temp.innerHTML = json[i]["desc"];
+                    if(lang != "ru") {
+                        temp.innerHTML = json[i]["desc-" + lang];
+                    } else {
+                        temp.innerHTML = json[i]["desc"];
+                    }
                     temp.style.color = "#777";
                     out.appendChild(temp);
                     temp = document.createElement("div");
-                    temp.textContent = "Игроки в клане (" + json[i]["players"].length + ")";
+                    temp.textContent = "Игроки в клане";
+                    if(lang == "ua") {
+                        temp.textContent = "Гравці у клані";
+                    }
+                    temp.textContent += " (" + json[i]["players"].length + ")";
                     temp.style.color = "#0000ff";
                     temp.style.cursor = "pointer";
                     temp.onclick = viewTrades;

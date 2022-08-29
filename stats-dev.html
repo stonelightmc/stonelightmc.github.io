@@ -4,7 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>&#12300;Stonelight&#12301;</title>
+    <link rel="canonical" href="https://stonelightmc.github.io/stats.html">
     <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-42DLHBGV89"></script>
+    <script async src="//static.getclicky.com/101378265.js"></script>
+    <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101378265ns.gif" /></p></noscript>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-42DLHBGV89');
+    </script>
+    <script src="lang.js"></script>
+    <script src="js.cookie.js"></script>
     <style>
         #best {
             height: 115px;
@@ -38,9 +51,14 @@
         .mar-bot {
             margin-bottom: 5px;
         }
+        img[src="/img/load.svg"] {
+            height: 100px;
+        }
     </style>
     <script>
         var stats;
+        var lang;
+        var texts = {"ru": [["Наиграл ", "ч"], ["", " уровень опыта"], ["Сломал ", " блоков"]], "ua":[["Награв ", "ч"], ["", " рівень досвіду"], ["Зламав ", " блоків"]]};
         function closeTrades() {
             document.getElementById("modal-content").innerHTML = "<div class=\"close\" onclick=\"closeTrades()\"></div>";
             document.getElementById("modal").classList.add("hide");
@@ -121,14 +139,14 @@
             let temp = document.createElement("div");
             temp.style.marginLeft = "5px";
             temp.className = "playerBorder";
-            temp.insertAdjacentHTML("afterbegin", "<div>Наиграл " + Math.round(playerStats["t"] / 7200) / 10 + "ч</div><div>Имеет " + playerStats["l"] + " уровень опыта</div><div>Сломал " + playerStats["b"] + " блоков</div>");
+            temp.insertAdjacentHTML("afterbegin", "<div>" + texts[lang][0][0] + Math.round(playerStats["t"] / 7200) / 10 + "ч</div><div>" + (lang == "ua" ? "Має " : "Имеет ") + playerStats["l"] + texts[lang][1][1] + "</div><div>" + texts[lang][2][0] + playerStats["b"] + texts[lang][2][1] + "</div>");
             content.lastChild.appendChild(temp);
             temp = document.createElement("div");
             temp.className = "playerBorder";
             temp.style.width = "calc(100% - 8px)";  
             temp.style.marginBottom = "0";
             temp.style.padding = "40px 10px";
-            temp.textContent = "В разработке...";
+            temp.textContent = lang == "ua" ? "В розробці..." : "В разработке...";
             content.appendChild(temp);
         }
         function loadPlayers() {
@@ -145,20 +163,21 @@
             playersReq.send();
         }
         function playersLoaded() {
-            let texts = [["Наиграл ", "ч"], ["", " уровень опыта"], ["Сломал ", " блоков"]];
             let childs = document.querySelectorAll("#best .bestPl");
             for (let i = 0; i < childs.length; i++) {
-                childs[i].appendChild(createCard(stats["best"][i]["name"], texts[i][0], stats["best"][i]["number"], texts[i][1]));
+                childs[i].appendChild(createCard(stats["best"][i]["name"], texts[lang][i][0], stats["best"][i]["number"], texts[lang][i][1]));
                 childs[i].lastChild.firstChild.style.height = "40px";
             }
             let pl = stats["players"];
+            document.getElementById("players").innerHTML = "";
             for (let i = 0; i < pl.length; i++) {
-                document.getElementById("players").appendChild(createCard(pl[i]["n"], "Наиграл ", Math.round(pl[i]["t"] / 7200) / 10, "ч"));
+                document.getElementById("players").appendChild(createCard(pl[i]["n"], texts[lang][0][0], Math.round(pl[i]["t"] / 7200) / 10, "ч"));
             }
         }
         window.onload = function() {
+            lang = Cookies.get("lang") == undefined ? "ru" : Cookies.get("lang");
             var playersReq = new XMLHttpRequest();
-            playersReq.open('GET', 'https://api.allorigins.win/get?url=http://stonelightapi.ddns.is74.ru:8080/getPlayers');
+            playersReq.open('GET', 'https://api.allorigins.win/get?url=http://stonelightapi.ddns.is74.ru/getPlayers');
             playersReq.onload = function () {
                 if (playersReq.status != 200) {
                     alert("Ошибка загрузки игроков");
@@ -169,7 +188,13 @@
                 }
             };
             playersReq.send();
-            
+            setTimeout(function(){
+                if(playersReq.status == 0) {
+                    let loading = document.createElement('img');
+                    loading.src = "/img/load.svg";
+                    document.getElementById('players').appendChild(loading);
+                }
+            }, 200);
         };
     </script>
 </head>
@@ -181,34 +206,32 @@
                 <span style="font-size: 25px; color: #4596ff;">Stonelight</span>
             </div>
             <div id="pages" class="hide_on_phone">
-                <a href="/index.html">Главная</a>
-                <a href="/klans.html">Кланы</a>
+                <a href="/index.html" class="trans-main">Главная</a>
+                <a href="/klans.html" class="trans-klans">Кланы</a>
                 <a href="/stats.html" class="checked">Статистика</a>
-                <a href="/places.html">Постройки</a>
+                <a href="/places.html" class="trans-builds">Постройки</a>
             </div>
-            <div style="justify-content: flex-end;">
-                <span class="NoRuBy hide_on_phone" onclick="hidenoruby()"><span id="nohover">Сервер недоступен на территории России и Беларуси</span><div id="onhover"><span>Закрыть</span></div></span>
-            </div>
+            <div style="justify-content: flex-end;"></div>
         </nav>
         <div id="pages" class="show_on_phone">
-            <a href="/index.html">Главная</a>
-            <a href="/klans.html">Кланы</a>
+            <a href="/index.html" class="trans-main">Главная</a>
+            <a href="/klans.html" class="trans-klans">Кланы</a>
             <a href="/stats.html" class="checked">Статистика</a>
-            <a href="/places.html">Постройки</a>
+            <a href="/places.html" class="trans-builds">Постройки</a>
         </div>
     </header>
     <div id="places-desc">
-        <span id="mainD">Статистика игроков</span>
+        <span id="mainD" class="trans-stats">Статистика игроков</span>
     </div>
     <div id="best" class="hide_on_phone">
-        <div class="bestPl"><div class="mar-bot">Наибольшее кол-во часов проведено в игре</div></div>
+        <div class="bestPl"><div class="mar-bot trans-best0">Наибольшее кол-во часов проведено в игре</div></div>
         <div class="divider"></div>
-        <div class="bestPl"><div class="mar-bot">Наибольший уровень опыта</div></div>
+        <div class="bestPl"><div class="mar-bot trans-best1">Наибольший уровень опыта</div></div>
         <div class="divider"></div>
-        <div class="bestPl"><div class="mar-bot">Самое большое количество сломаных блоков</div></div>
+        <div class="bestPl"><div class="mar-bot trans-best2">Самое большое количество сломаных блоков</div></div>
     </div>
     <div id="players">
-
+        
     </div>
     <div id="modal" class="hide">
         <div id="modal-content">

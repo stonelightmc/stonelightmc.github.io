@@ -53,11 +53,6 @@ select:focus {
     max-width: 220px;
 }
 
-.place>:first-child {
-    margin: 10px 10px 4px 10px;
-    font-size: 20px;
-}
-
 .place>* {
     margin-bottom: 5px;
 }

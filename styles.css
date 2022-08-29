@@ -132,9 +132,12 @@ nav>div {
 #pages a {
     margin: 0 10px;
     color: unset;
-    text-decoration: none;
     line-height: 80px;
     display: inline-block;
+}
+
+a {
+    text-decoration: none;
 }
 
 #pages a.checked {

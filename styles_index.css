@@ -32,6 +32,7 @@
 #admins {
     padding-top: 8px;
     background: linear-gradient(#090042, #242424);
+    position: relative;
 }
 
 #adminFlex {
@@ -44,13 +45,20 @@
 
 .admin {
     color: white;
-    text-decoration: none;
     cursor: default;
     display: block;
     border-radius: 20px;
     border: red dashed 2px;
     padding: 8px;
     margin: 5px;
+}
+
+select {
+    background-color: #ffffffa9;
+    border: #000 solid 1px;
+    border-radius: 5px;
+    padding: 5px;
+    font-family: TTNorms;
 }
 
 #renImg {
@@ -83,8 +91,15 @@
 }
 
 .link {
-    text-decoration: none;
     color: black;
+}
+
+button {
+    background-color: white;
+    border: #000 solid 1px;
+    border-radius: 5px;
+    padding: 4px 10px;
+    font-family: TTNorms;
 }
 
 #pirat {
@@ -117,6 +132,14 @@
     display: inline-block;
     padding: 10px;
     margin: 5px 0 10px 0;
+}
+
+.discord {
+    transition: padding 0.4s;
+}
+
+.discord:hover {
+    padding: 15px 20px;
 }
 
 #lblue {
