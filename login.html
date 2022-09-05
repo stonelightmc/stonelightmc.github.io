@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html style="height: 90%;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js.cookie.js"></script>
+    <script>
+        window.onload = function() {
+            switch (window.location.hash) {
+                case "":
+                    body.textContent = "Нет данных для авторизации";
+                    break;
+                case "#serverfull":
+                    body.textContent = "Сервер не может обработать столько пользователей. Рекомендую сообщить об этом Uniritial (разработчику сайта)";
+                    break;
+                case "#register":
+                    body.textContent = "Вы не зарегистрированы";
+                    break;
+                case "#servererr":
+                    body.textContent = "Внутренняя ошибка сервера. Рекомендую сообщить об этом Uniritial (разработчику сайта)";
+                    break;
+                default:
+                    var num = parseInt(window.location.hash.substring(1, window.location.hash.length));
+                    if(!isNaN(num)) {
+                        Cookies.set('session', num);
+                        Cookies.set('fromLogin', true);
+                        window.location.href = "https://stonelightmc.github.io/index.html";
+                    } else {
+                        body.textContent = "Ошибка кода. Попробуйте залогиниься заново";
+                    }
+                    break;
+            }
+        };
+    </script>
+</head>
+<body style="display: flex; align-items: center; justify-content: center; height: 100%; font-family: 'Trebuchet MS'; font-size: larger;" id="body">
+    Происходит авторизация...
+</body>
+</html>
