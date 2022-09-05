@@ -228,7 +228,7 @@
             }
         }
         function changeNoRu() {
-            Cookies.set('hided', event.currentTarget.checked ? 'false' : 'true');
+            Cookies.set('hided', event.currentTarget.checked ? 'false' : 'true', { expires: 365 });
             if(event.currentTarget.checked == true) {
                 document.styleSheets[0].deleteRule(6);
                 document.getElementsByClassName("NoRuBy")[0].classList.remove("opahide");
@@ -252,18 +252,18 @@
         };
         function hidenoruby() {
             document.getElementsByClassName("NoRuBy")[0].classList.add("opahide");
-            Cookies.set('hided', 'true');
+            Cookies.set('hided', 'true', { expires: 365 });
             document.getElementById("settingsAlert").checked = false;
         }
         function selectLang(langS) {
-            Cookies.set('lang', langS);
+            Cookies.set('lang', langS, { expires: 365 });
             if(lang == "ua") {
                 lang();
             }
         }
         function changeLang() {
             let langT = event.currentTarget.value;
-            Cookies.set('lang', langT);
+            Cookies.set('lang', langT, { expires: 365 });
             if(langT == "ru") {
                 document.location.reload();
             } else {

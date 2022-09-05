@@ -174,15 +174,20 @@
                 document.getElementById("players").appendChild(createCard(pl[i]["n"], texts[lang][0][0], Math.round(pl[i]["t"] / 7200) / 10, "ч"));
             }
         }
+        function collumns() {
+            var container = document.getElementById("players");
+            var maxWidth = 220;
+            console.log(Math.ceil(container.offsetWidth / maxWidth));
+        }
         window.onload = function() {
             lang = Cookies.get("lang") == undefined ? "ru" : Cookies.get("lang");
             var playersReq = new XMLHttpRequest();
-            playersReq.open('GET', 'https://api.allorigins.win/get?url=http://stonelightapi.ddns.is74.ru/getPlayers');
+            playersReq.open('GET', 'https://stonelightapi.ddns.is74.ru/getPlayers');
             playersReq.onload = function () {
                 if (playersReq.status != 200) {
                     alert("Ошибка загрузки игроков");
                 } else {
-                    stats = JSON.parse(JSON.parse(playersReq.responseText)["contents"]);
+                    stats = JSON.parse(playersReq.responseText);
                     stats["players"].sort((a, b) => a["t"] > b["t"] ? -1 : 1);
                     loadPlayers();
                 }
@@ -195,6 +200,9 @@
                     document.getElementById('players').appendChild(loading);
                 }
             }, 200);
+            setInterval(function(){
+                collumns();
+            }, 500);
         };
     </script>
 </head>
