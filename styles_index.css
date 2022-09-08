@@ -53,6 +53,22 @@
     margin: 5px;
 }
 
+#auth {
+    margin-right: 10px;
+    padding: 5px 20px;
+}
+
+#auth img {
+    position: relative;
+    top: 5px;
+}
+
+#auth span {
+    margin-bottom: 8px;
+    display: inline-block;
+    margin-right: 6px;
+}
+
 select {
     background-color: #ffffffa9;
     border: #000 solid 1px;

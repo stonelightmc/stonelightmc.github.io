@@ -44,6 +44,13 @@ nav>div {
     display: none !important;
 }
 
+.border {
+    display: inline-block;
+    border: #000 solid 1px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
 .playerBorder {
     border: #000 solid 1px;
     padding: 8px;
