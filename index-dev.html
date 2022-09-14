@@ -20,6 +20,95 @@
     <script async src="//static.getclicky.com/101378265.js"></script>
     <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101378265ns.gif" /></p></noscript>
     <script src="lang.js"></script>
+    <script>
+        function hide(id) {
+            document.getElementById(id).classList.add("hide");
+        }
+        function show(id) {
+            document.getElementById(id).classList.remove("hide");
+        }
+        function onoff(id) {
+            if(document.getElementById(id).classList.contains("hide")) {
+                event.currentTarget.classList.add("rotate");
+                show(id);
+            }
+            else {
+                event.currentTarget.classList.remove("rotate");
+                hide(id);
+            }
+        }
+        function authonoff(id) {
+            if(document.getElementById(id).classList.contains("hide")) {
+                event.currentTarget.classList.add("rotat");
+                event.currentTarget.parentElement.classList.add("open");
+                document.getElementById(id).classList.add("open");
+                show(id);
+            }
+            else {
+                event.currentTarget.classList.remove("rotate");
+                event.currentTarget.parentElement.classList.remove("open");
+                document.getElementById(id).classList.remove("open");
+                hide(id);
+            }
+        }
+        function changeNoRu() {
+            Cookies.set('hided', event.currentTarget.checked ? 'false' : 'true', { expires: 365 });
+            if(event.currentTarget.checked == true) {
+                document.styleSheets[0].deleteRule(6);
+                document.getElementsByClassName("NoRuBy")[0].classList.remove("opahide");
+            } else {
+                document.styleSheets[0].addRule(".NoRuBy", "display: none !important;", 6);
+            }
+        }
+        window.onload = function load() {
+            if(Cookies.get('hided') != "true") {
+               document.styleSheets[0].deleteRule(6);
+               document.getElementById("settingsAlert").checked = true;
+            } else {
+                document.getElementById("settingsAlert").checked = false;
+            }
+            if(Cookies.get('lang') == undefined) {
+                document.getElementById("modal-content").children[1].classList.remove("hide");
+                document.getElementById("modal-content").children[0].classList.add("hide");
+                show("modal");
+                document.querySelector('.close').classList.add("hide");
+            }
+        };
+        function hidenoruby() {
+            document.getElementsByClassName("NoRuBy")[0].classList.add("opahide");
+            Cookies.set('hided', 'true', { expires: 365 });
+            document.getElementById("settingsAlert").checked = false;
+        }
+        function selectLang(langS) {
+            Cookies.set('lang', langS, { expires: 365 });
+            if(lang == "ua") {
+                lang();
+            }
+        }
+        function changeLang() {
+            let langT = event.currentTarget.value;
+            Cookies.set('lang', langT, { expires: 365 });
+            if(langT == "ru") {
+                document.location.reload();
+            } else {
+                lang();
+            }
+        }
+        if(Cookies.get("session") != undefined) {
+            var sessionInfo = new XMLHttpRequest();
+            sessionInfo.open('GET', 'https://stonelightapi.ddns.is74.ru/sessionInfo?a=' + Cookies.get("session"));
+            sessionInfo.onload = function () {
+                if (sessionInfo.status != 200) {
+                    
+                } else {
+                    let session = JSON.parse(sessionInfo.responseText);
+                    document.getElementById("auth-state").textContent = session["cn"];
+                }
+            };
+            sessionInfo.send();
+        }
+        
+    </script>
 </head>
 
 <body>
@@ -37,8 +126,25 @@
             </div>
             <div style="justify-content: flex-end;">
                 <!--span class="NoRuBy hide_on_phone" onclick="hidenoruby()"><span id="nohover" class="trans">Сервер недоступен на территории России и Беларуси</span><div id="onhover"><span class="trans">Закрыть</span></div></span-->
-                <div class="border" id="auth"><span style="margin-bottom: 5px; display: inline-block;">Не авторизован</span><img src="/img/moreArrow.svg" height="20" style="margin-top: 5px;"></div>
-                
+                <div class="border" id="auth"><span id="auth-state">Не авторизован</span><img src="/img/moreArrow.svg" onclick="authonoff('auth-window')" class="onoffarrow" style="vertical-align: baseline"></div>
+                <div id="auth-window" class="hide">
+                    <div style="display: flex; justify-content: center; align-items: center; margin-top: 10px; padding-bottom: 10px; border-bottom: #000 solid 1px;">
+                        <div style="display: inline-block; position: relative;">
+                            <img src="/img/skins/Uniritial/1.webp" height="50" style="border-radius: 10px; margin-right: 6px;" title="Cкин">
+                        </div>
+                        <div>
+                            <div style="font-size: 20px; margin-top: 8px;" title="Упрощённый ник">Unir</div>
+                            <div style="color: grey;" title="Ник в майнкрафте">Uniritial</div>
+                        </div>
+                    </div>
+                    <div style="color: #00c200; margin-top: 5px;">В вайтлисте</div>
+                    <button style="margin-top: 5px">Изменить скин</button>
+                    <button style="margin-top: 5px">Добавить магазин</button>
+                    <div style="border-top: #000 solid 1px; padding-top: 6px; margin-top: 94px; cursor: pointer;">
+                        <img style="vertical-align: middle;" src="/img/logout.svg" height="30">
+                        <span style="font-size: 20px; vertical-align: middle;">Выйти</span>
+                    </div>
+                </div>           
             </div>
         </nav>
         <div id="pages" class="show_on_phone">
@@ -50,8 +156,8 @@
     </header>
     <div id="description">
         <div id="bol-blue">
-            <h1 id="mainD" class="trans" style="text-shadow:#333 0 0 30px">StoneLight - ванильный сервер без приватов и доната</h1>
-            <div id="secD" class="trans">Выживайте, вступайте в кланы, находите новых друзей и просто
+            <h1 id="mainD" class="trans shadow">StoneLight - ванильный сервер без приватов и доната</h1>
+            <div id="secD" class="trans shadow">Выживайте, вступайте в кланы, находите новых друзей и просто
                 весело проводите время :D</div>
             <div style="display: flex; align-items: center;">
                 <a class="white link discord" href="https://discord.gg/GCfnjCsurR" style="margin-right: 10px;">
@@ -68,7 +174,7 @@
         <div id="blue_fon">
         </div>
         <img src="img/banner.webp" id="renImg" class="hide_on_phone">
-        <span style="position:absolute; bottom:5px; right:5px; color: #fff;">Спасибо игроку Yan_Gaming за постройку</span>
+        <span style="position:absolute; bottom:5px; right:5px; color: #fff;" class="hide_on_phone">Спасибо игроку Yan_Gaming за постройку</span>
     </div>
     <div class="flex" id="toDo">
         <div class="toDoElem">
@@ -102,19 +208,19 @@
     <div id="lblue">
         <span style="font-size: 25px;" class="trans">StoneLight - сервер ванильного выживания, имеющий некоторые дополнения и небольшие изменения игровых механик.<br> На сервере: </span>
         <ul style="text-align: left; font-size: larger; padding: 0; margin-left: 20px;">
-            <li><span class="trans">Измененены некоторые торги у жителей</span><img src="img/moreArrow.svg" height="20" style="vertical-align: middle; margin-left: 5px; transition: transform 0.4s;" onclick="onoff('alm', this)"></li>
+            <li><span class="trans">Измененены некоторые торги у жителей</span><img src="img/moreArrow.svg" class="onoffarrow" onclick="onoff('alm')"></li>
             <div class="hide note trans" id="alm">Алмазные вещи (броня, инструменты, оружие) жители будут продавать не только за изумруды, а и за алмазы (цена у жителей будет меньше чем при крафте на верстаке), книги зачарования будут продаваться за лазурит. Все инструменты и вся броня продаются без зачарований</div>
             <li class="trans">Установлен датапак BlazeAndCave's, добавляющий в игру около 1000 новых достижений</li>
             <li class="trans">Уменьшен шанс дропа тотема с призывателя со 100% до 5%</li>
-            <li><span class="trans">Добавлен крафт для мешков</span><img src="img/moreArrow.svg" height="20" style="vertical-align: middle; margin-left: 5px; transition: transform 0.4s;" onclick="onoff('meshok', this)"></li>
+            <li><span class="trans">Добавлен крафт для мешков</span><img src="img/moreArrow.svg" class="onoffarrow" onclick="onoff('meshok')"></li>
             <div class="hide note" id="meshok"><span class="trans">крафт мешка: </span><img src="img/meshok.webp" height="100" style="vertical-align: middle;"></div>
             <li class="trans">Странствующие торговцы иногда могут продать сундук с картой древнего города</li>
-            <li><span class="trans">Добавлен ресурспак сервера</span><img src="img/moreArrow.svg" height="20" style="vertical-align: middle; margin-left: 5px; transition: transform 0.4s;"  onclick="onoff('rp', this)"></li>
+            <li><span class="trans">Добавлен ресурспак сервера</span><img src="img/moreArrow.svg" class="onoffarrow"  onclick="onoff('rp',)"></li>
             <div class="hide note" id="rp"><span class="trans">В ресурспак включены: различные шляпы, появляющиеся при переименовании тыкв, карты (переименованая бумага). Названия шляп можно посмотреть </span><a href="/hats.html" class="trans">здесь</a></div>
             <li class="trans">Игроки при убийстве дропают головы</li>
-            <li><span class="trans">Редактор стоек для брони</span><img src="img/moreArrow.svg" height="20" style="vertical-align: middle; margin-left: 5px; transition: transform 0.4s;" onclick="onoff('bron', this)"></li>
+            <li><span class="trans">Редактор стоек для брони</span><img src="img/moreArrow.svg" class="onoffarrow" onclick="onoff('bron')"></li>
             <div class="hide note trans" id="bron">Нажатие ПКМ c кремнем с руке открывает интуитивно понятное меню управления</div>
-            <li><span class="trans">Баннеры можно располагать горизонтально как флаги</span><img src="img/moreArrow.svg" height="20" style="vertical-align: middle; margin-left: 5px; transition: transform 0.4s;" onclick="onoff('flag', this)"></li>
+            <li><span class="trans">Баннеры можно располагать горизонтально как флаги</span><img src="img/moreArrow.svg" class="onoffarrow" onclick="onoff('flag')"></li>
             <div class="hide note trans" id="flag">Поддерживаемые блоки: заборы, стены, стеклянные панели, железные решетки, громоотводы. Присядьте и щелкните баннер на одном из поддерживаемых блоков, чтобы разместить его в качестве флага</div>
             <li class="trans">У игрока с невидимостью нет частиц эффекта</li>
         </ul>
@@ -135,7 +241,7 @@
                 <div class="trans">Нельзя иметь более 1 аккаунта</div>
             </div>
             <div class="toDoElem">
-                <img src="img/rules/noToxic.webp" style="height: 80%;">
+                <img src="img/rules/noToxic.webp" style="height: 80%; border-radius: 20px;">
                 <div class="trans">Нельзя оскорблять и токсичить в чатах</div>
             </div>
         </div>
@@ -213,67 +319,6 @@
         </div>
         <div id="blacker"></div>
     </div>
-    <script>
-        function hide(id) {
-            document.getElementById(id).classList.add("hide");
-        }
-        function show(id) {
-            document.getElementById(id).classList.remove("hide");
-        }
-        function onoff(id, thiS) {
-            if(document.getElementById(id).classList.contains("hide")) {
-                thiS.classList.add("rotate");
-                show(id);
-            }
-            else {
-                thiS.classList.remove("rotate");
-                hide(id);
-            }
-        }
-        function changeNoRu() {
-            Cookies.set('hided', event.currentTarget.checked ? 'false' : 'true', { expires: 365 });
-            if(event.currentTarget.checked == true) {
-                document.styleSheets[0].deleteRule(6);
-                document.getElementsByClassName("NoRuBy")[0].classList.remove("opahide");
-            } else {
-                document.styleSheets[0].addRule(".NoRuBy", "display: none !important;", 6);
-            }
-        }
-        window.onload = function load() {
-            if(Cookies.get('hided') != "true") {
-               document.styleSheets[0].deleteRule(6);
-               document.getElementById("settingsAlert").checked = true;
-            } else {
-                document.getElementById("settingsAlert").checked = false;
-            }
-            if(Cookies.get('lang') == undefined) {
-                document.getElementById("modal-content").children[1].classList.remove("hide");
-                document.getElementById("modal-content").children[0].classList.add("hide");
-                show("modal");
-                document.querySelector('.close').classList.add("hide");
-            }
-        };
-        function hidenoruby() {
-            document.getElementsByClassName("NoRuBy")[0].classList.add("opahide");
-            Cookies.set('hided', 'true', { expires: 365 });
-            document.getElementById("settingsAlert").checked = false;
-        }
-        function selectLang(langS) {
-            Cookies.set('lang', langS, { expires: 365 });
-            if(lang == "ua") {
-                lang();
-            }
-        }
-        function changeLang() {
-            let langT = event.currentTarget.value;
-            Cookies.set('lang', langT, { expires: 365 });
-            if(langT == "ru") {
-                document.location.reload();
-            } else {
-                lang();
-            }
-        }
-    </script>
 </body>
 
 </html>

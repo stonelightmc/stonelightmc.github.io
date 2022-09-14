@@ -1,1 +1,249 @@
-#bol-blue{display:flex;flex-direction:column;justify-content:center;align-items:center;height:100%;z-index:1}#bol-blue>*{margin:0 100px 20px 100px}.flex{display:flex;flex-wrap:wrap;align-items:center;justify-content:center}.toDoElem{display:flex;align-items:center;height:265px;width:280px;margin:10px;font-size:larger;flex-direction:column;justify-content:center}.toDoElem div{font-size:larger;}#admins{padding-top:8px;background:linear-gradient(#090042,#242424);position:relative}#adminFlex{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;padding:5px}.admin{color:white;cursor:default;display:block;border-radius:20px;border:red dashed 2px;padding:8px;margin:5px}#auth{margin-right:10px;padding:5px 20px}#auth img{position:relative;top:5px}#auth span{margin-bottom:8px;display:inline-block;margin-right:6px}select{background-color:#ffffffa9;border:#000 solid 1px;border-radius:5px;padding:5px;font-family:TTNorms}#renImg{pointer-events:none;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);height:100%;z-index:-1}#description{position:relative;height:800px}#blue_fon{position:absolute;top:0;left:0;background:linear-gradient(#5791eb,#b9e2ff);z-index:-2;height:100%;width:100%}.white{border-radius:10px;background-color:white;padding:15px}.link{color:black}button{background-color:white;border:#000 solid 1px;border-radius:5px;padding:4px 10px;font-family:TTNorms}#pirat{padding:40px 0 40px 0;background:linear-gradient(#5a90e0,#63aee4);color:#fff;font-size:30px;display:flex;justify-content:center;align-items:center}.admin img{height:50px}#rules{border-top:#000 solid 1px;padding-top:10px}#toDo{padding:20px 20px 0 20px}.note{border:red dashed 2px;border-radius:10px;display:inline-block;padding:10px;margin:5px 0 10px 0}.discord{transition:padding .4s}.discord:hover{padding:15px 20px}#lblue{padding:10px 100px 10px 100px}#secD{font-size:30px;color:white;text-shadow:#333 0 0 30px}@media (max-width:372px){.admin{padding:6px;margin:3px}}@media (max-width:900px){#blue_fon{background:linear-gradient(#367ee9,#4cb4ff)}#lblue{padding:10px 15px 10px 15px}.toDoElem{margin:0 0 20px 0}#toDo{padding:0}#bol-blue>*{margin:0 10px 20px 10px}#secD{font-size:20px}#description{height:500px}.admin img{height:43px}#pirat{font-size:25px}}
+#bol-blue {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    z-index: 1
+}
+
+#bol-blue>* {
+    margin: 0 100px 20px 100px
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center
+}
+
+.toDoElem {
+    display: flex;
+    align-items: center;
+    height: 265px;
+    width: 280px;
+    margin: 10px;
+    font-size: larger;
+    flex-direction: column;
+    justify-content: center
+}
+
+.toDoElem div {
+    font-size: larger;
+}
+
+#admins {
+    padding-top: 8px;
+    background: linear-gradient(#090042, #242424);
+    position: relative
+}
+
+#adminFlex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 5px
+}
+
+.admin {
+    color: white;
+    cursor: default;
+    display: block;
+    border-radius: 20px;
+    border: red dashed 2px;
+    padding: 8px;
+    margin: 5px
+}
+
+#auth {
+    margin-right: 10px;
+    margin-bottom: 0px;
+    padding: 5px 20px
+}
+
+#auth img {
+    position: relative;
+    top: 6px
+}
+
+#auth span {
+    margin-bottom: 4px; 
+    display: inline-block;
+    margin-right: 6px
+}
+
+select {
+    background-color: #ffffffa9;
+    border: #000 solid 1px;
+    border-radius: 5px;
+    padding: 5px;
+    font-family: TTNorms
+}
+
+#renImg {
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    z-index: -1
+}
+
+#description {
+    position: relative;
+    height: 800px
+}
+
+#blue_fon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(#5791eb, #b9e2ff);
+    z-index: -2;
+    height: 100%;
+    width: 100%
+}
+
+.white {
+    border-radius: 10px;
+    background-color: white;
+    padding: 15px
+}
+
+.link {
+    color: black
+}
+
+button {
+    background-color: white;
+    border: #000 solid 1px;
+    border-radius: 5px;
+    padding: 4px 10px;
+    font-family: TTNorms;
+    cursor: pointer;
+}
+
+#pirat {
+    padding: 40px 0 40px 0;
+    background: linear-gradient(#5a90e0, #63aee4);
+    color: #fff;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.admin img {
+    height: 50px
+}
+
+#rules {
+    border-top: #000 solid 1px;
+    padding-top: 10px
+}
+
+#toDo {
+    padding: 20px 20px 0 20px
+}
+
+.note {
+    border: red dashed 2px;
+    border-radius: 10px;
+    display: inline-block;
+    padding: 10px;
+    margin: 5px 0 10px 0
+}
+
+.discord {
+    transition: padding .4s
+}
+
+.discord:hover {
+    padding: 15px 20px
+}
+
+#lblue {
+    padding: 10px 100px 10px 100px
+}
+
+#secD {
+    font-size: 30px;
+    color: white;
+}
+
+#auth-window {
+    position: absolute;
+    right: 10px;
+    top: 60px;
+    background-color: #fff;
+    border-radius: 10px;
+    border: #000 solid 1px;
+    height: 300px;
+    width: 230px;
+    z-index: 1;
+}
+
+.onoffarrow {
+    vertical-align: middle;
+    height: 20px;
+    margin-left: 5px;
+    transition: transform 0.4s;
+}
+
+#auth-window.open {
+    border-radius: 10px 0 10px 10px;
+}
+
+#auth.open {
+    border-radius: 10px 10px 0px 0px;
+    border-bottom: none;
+    margin-bottom: 1px !important;
+}
+
+@media (max-width:372px) {
+    .admin {
+        padding: 6px;
+        margin: 3px
+    }
+}
+
+@media (max-width:900px) {
+    #blue_fon {
+        background: linear-gradient(#367ee9, #4cb4ff)
+    }
+
+    #lblue {
+        padding: 10px 15px 10px 15px
+    }
+
+    .toDoElem {
+        margin: 0 0 20px 0
+    }
+
+    #toDo {
+        padding: 0
+    }
+
+    #bol-blue>* {
+        margin: 0 10px 20px 10px
+    }
+
+    #secD {
+        font-size: 20px
+    }
+
+    #description {
+        height: 500px
+    }
+
+    .admin img {
+        height: 43px
+    }
+
+    #pirat {
+        font-size: 25px
+    }
+}
