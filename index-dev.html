@@ -37,19 +37,27 @@
                 hide(id);
             }
         }
-        function authonoff(id) {
-            if(document.getElementById(id).classList.contains("hide")) {
-                event.currentTarget.classList.add("rotat");
-                event.currentTarget.parentElement.classList.add("open");
-                document.getElementById(id).classList.add("open");
-                show(id);
-            }
-            else {
+        function authonoff() {
+            if(document.getElementById("auth-window").classList.contains("open")) {
                 event.currentTarget.classList.remove("rotate");
                 event.currentTarget.parentElement.classList.remove("open");
-                document.getElementById(id).classList.remove("open");
-                hide(id);
+                document.getElementById("auth-window").classList.remove("open");
             }
+            else {
+                event.currentTarget.classList.add("rotate");
+                event.currentTarget.parentElement.classList.add("open");
+                document.getElementById("auth-window").classList.add("open");
+            }
+        }
+        function modal(id) {
+            let mod = document.getElementById("modal-content").children;
+            for (let i = 0; i < mod.length - 1; i++) {
+                if(i != id) {
+                    mod[i].classList.add("hide");
+                }
+            }
+            mod[id].classList.remove("hide");
+            show("modal");
         }
         function changeNoRu() {
             Cookies.set('hided', event.currentTarget.checked ? 'false' : 'true', { expires: 365 });
@@ -57,23 +65,9 @@
                 document.styleSheets[0].deleteRule(6);
                 document.getElementsByClassName("NoRuBy")[0].classList.remove("opahide");
             } else {
-                document.styleSheets[0].addRule(".NoRuBy", "display: none !important;", 6);
+                document.styleSheets[0].addRule(".NoRuBy", "display:none !important;", 6);
             }
         }
-        window.onload = function load() {
-            if(Cookies.get('hided') != "true") {
-               document.styleSheets[0].deleteRule(6);
-               document.getElementById("settingsAlert").checked = true;
-            } else {
-                document.getElementById("settingsAlert").checked = false;
-            }
-            if(Cookies.get('lang') == undefined) {
-                document.getElementById("modal-content").children[1].classList.remove("hide");
-                document.getElementById("modal-content").children[0].classList.add("hide");
-                show("modal");
-                document.querySelector('.close').classList.add("hide");
-            }
-        };
         function hidenoruby() {
             document.getElementsByClassName("NoRuBy")[0].classList.add("opahide");
             Cookies.set('hided', 'true', { expires: 365 });
@@ -94,18 +88,87 @@
                 lang();
             }
         }
+        function discord() {
+            let cNick = document.getElementById("reg-cnick").value;
+            Cookies.set("reg", "&c=" + (cNick != "" ? cNick : "n") + "&m=" + document.getElementById("reg-mcnick").value);
+            window.location.href = "https:\/\/discord.com/api/oauth2/authorize?client_id=1010150530720469002&redirect_uri=http%3A%2F%2Fstonelightapi.ddns.is74.ru%2Fregister&response_type=code&scope=identify%20guilds";
+        }
+        const urlParams = new URLSearchParams(window.location.search);
+        if(Cookies.get("reg") != undefined && urlParams.get("code") != null) {
+            window.location.href = "http://stonelightapi.ddns.is74.ru/register?code=" + urlParams.get("code") + Cookies.get("reg");
+            Cookies.remove("reg");
+        }
+        if(window.location.hash != "") {
+            //СДЕЛАТЬ ЭТО МОДАЛЬНЫМ ОКНОМ
+            switch (window.location.hash) {
+                case "":
+                    alert("Нет данных для авторизации");
+                    break;
+                case "#serverfull":
+                    alert("Сервер не может обработать столько пользователей. Рекомендую сообщить об этом Uniritial (разработчику сайта)");
+                    break;
+                case "#register":
+                    alert("Вы не зарегистрированы");
+                    break;
+                case "#servererr":
+                    alert("Внутренняя ошибка сервера. Рекомендую сообщить об этом Uniritial (разработчику сайта)");
+                    break;
+                default:
+                    var num = parseInt(window.location.hash.substring(1, window.location.hash.length));
+                    if(!isNaN(num)) {
+                        Cookies.set("session", num);
+                    } else {
+                        alert("Ошибка кода. Попробуйте залогиниться заново");         
+                    }
+                    break;
+            }
+            history.pushState("", document.title, window.location.pathname);
+            //СДЕЛАТЬ ЭТО МОДАЛЬНЫМ ОКНОМ
+        }
+        window.onload = function load() {
+            if(Cookies.get('hided') != "true") {
+               document.styleSheets[0].deleteRule(6);
+               document.getElementById("settingsAlert").checked = true;
+            } else {
+                document.getElementById("settingsAlert").checked = false;
+            }
+            if(urlParams.get("err") != null) {
+                modal(3);
+                if(urlParams.get("err") != "ok") {
+                    document.getElementById("registration-info").children[0].classList.add("hide");
+                    document.getElementById("registration-info").children[1].classList.remove("hide");
+                }
+            }
+            if(Cookies.get('lang') == undefined) {
+                modal(2);
+                document.querySelector('.close').classList.add("hide");
+            }
+        };
         if(Cookies.get("session") != undefined) {
             var sessionInfo = new XMLHttpRequest();
             sessionInfo.open('GET', 'https://stonelightapi.ddns.is74.ru/sessionInfo?a=' + Cookies.get("session"));
             sessionInfo.onload = function () {
                 if (sessionInfo.status != 200) {
-                    
+                    document.getElementById("auth-state").textContent = "Войдите заново";
                 } else {
                     let session = JSON.parse(sessionInfo.responseText);
+                    document.getElementById("auth-sNick").textContent = session["cn"];
                     document.getElementById("auth-state").textContent = session["cn"];
+                    document.getElementById("auth-nick").textContent = session["mn"];
+                    let names = [["Ожидает принятия", "#e8e800"], ["В вайтлисте", "#00c200"]];
+                    document.getElementById("auth-status").textContent = names[session["s"]][0];
+                    document.getElementById("auth-status").style.color = names[session["s"]][1];
+                    if(session["s"] == 1) {
+                        show("auth-cshop");
+                        show("auth-cskin");
+                    }
+                    show("auth-info");
+                    hide("auth-login");
                 }
             };
             sessionInfo.send();
+        } else {
+            document.getElementById("auth-state").textContent = "Не авторизован";
         }
         
     </script>
@@ -126,23 +189,35 @@
             </div>
             <div style="justify-content: flex-end;">
                 <!--span class="NoRuBy hide_on_phone" onclick="hidenoruby()"><span id="nohover" class="trans">Сервер недоступен на территории России и Беларуси</span><div id="onhover"><span class="trans">Закрыть</span></div></span-->
-                <div class="border" id="auth"><span id="auth-state">Не авторизован</span><img src="/img/moreArrow.svg" onclick="authonoff('auth-window')" class="onoffarrow" style="vertical-align: baseline"></div>
-                <div id="auth-window" class="hide">
-                    <div style="display: flex; justify-content: center; align-items: center; margin-top: 10px; padding-bottom: 10px; border-bottom: #000 solid 1px;">
-                        <div style="display: inline-block; position: relative;">
-                            <img src="/img/skins/Uniritial/1.webp" height="50" style="border-radius: 10px; margin-right: 6px;" title="Cкин">
+                <div class="border" id="auth"><span id="auth-state">Загрузка...</span><img src="/img/moreArrow.svg" onclick="authonoff()" class="onoffarrow" id="auth-open" style="vertical-align: baseline"></div>
+                <div id="auth-window">
+                    <div id="auth-info" class="hide">
+                        <div style="display: flex; justify-content: center; align-items: center; margin-top: 10px; padding-bottom: 10px; border-bottom: #000 solid 1px;">
+                            <div style="display: inline-block; position: relative;">
+                                <img src="/img/skins/Uniritial/1.webp" height="50" id="auth-skin" style="border-radius: 10px; margin-right: 6px;" title="Cкин">
+                            </div>
+                            <div>
+                                <div style="font-size: 20px; margin-top: 8px;" id="auth-sNick" title="Упрощённый ник"></div>
+                                <div style="color: grey;" title="Ник в майнкрафте" id="auth-nick"></div>
+                            </div>
                         </div>
-                        <div>
-                            <div style="font-size: 20px; margin-top: 8px;" title="Упрощённый ник">Unir</div>
-                            <div style="color: grey;" title="Ник в майнкрафте">Uniritial</div>
+                        <div style="color: #b5c200; margin-top: 5px;" id="auth-status"></div>
+                        <button style="margin-top: 5px" class="hide" id="auth-cskin">Изменить скин</button>
+                        <button style="margin-top: 5px" class="hide" id="auth-cshop">Добавить магазин</button>
+                        <div style="border-top: #000 solid 1px; padding-top: 6px; position: absolute; bottom: 8px; width: 100%; cursor: pointer;">
+                            <img style="vertical-align: middle;" src="/img/logout.svg" height="30">
+                            <span style="font-size: 20px; vertical-align: middle;">Выйти</span>
                         </div>
                     </div>
-                    <div style="color: #00c200; margin-top: 5px;">В вайтлисте</div>
-                    <button style="margin-top: 5px">Изменить скин</button>
-                    <button style="margin-top: 5px">Добавить магазин</button>
-                    <div style="border-top: #000 solid 1px; padding-top: 6px; margin-top: 94px; cursor: pointer;">
-                        <img style="vertical-align: middle;" src="/img/logout.svg" height="30">
-                        <span style="font-size: 20px; vertical-align: middle;">Выйти</span>
+                    <div id="auth-login">
+                        <div style="padding: 6px 0; cursor: pointer;" onclick="window.location.href='https:\/\/discord.com/api/oauth2/authorize?client_id=1010150530720469002&redirect_uri=http%3A%2F%2Fstonelightapi.ddns.is74.ru%2Flogin&response_type=code&scope=identify'">
+                            <img style="vertical-align: middle;" src="/img/login.svg" height="30">
+                            <span style="font-size: 20px; vertical-align: middle;">Войти</span>
+                        </div>
+                        <div style="border-top: #000 solid 1px; padding: 6px 0; cursor: pointer;" onclick="modal('1')">
+                            <img style="vertical-align: middle;" src="/img/reg.svg" height="33">
+                            <span style="font-size: 20px; vertical-align: middle;">Регистрация</span>
+                        </div>
                     </div>
                 </div>           
             </div>
@@ -294,7 +369,7 @@
                 </div>
             </a>
         </div>
-        <img src="/img/settings.svg" onclick="show('modal')" height="30px" style="position: absolute; bottom: 10px; right: 10px">
+        <img src="/img/settings.svg" onclick="modal(0)" height="30px" style="position: absolute; bottom: 10px; right: 10px">
     </div>
     <div id="modal" class="hide">
         <div id="modal-content" style="padding: 20px;">
@@ -302,6 +377,20 @@
                 <div style="font-size: larger; margin-bottom: 10px;">Настройки</div>
                 <div><span style="margin-right: 5px;">Язык</span><select id="settingsLang" onchange="changeLang()"><option value="ru">Русский</option><option value="ua">Украинский</option></select></div>
                 <div><span style="margin-right: 5px;">Показывать предупреждение</span><input onchange="changeNoRu()" type="checkbox" id="settingsAlert"></div>
+            </div>
+            <div id="registration" class="hide">
+                <div style="margin-bottom: 5px;">
+                    <input type="text" id="reg-mcnick">
+                    <label for="reg-mcnick">Ваш ник в майнкрафте</label>
+                </div>
+                <div style="margin-bottom: 5px;">
+                    <input type="text" id="reg-cnick" placeholder="Необязательно">
+                    <label for="reg-cnick">Ваш упрощенный ник <div style="color: #8d8d8d;">(например Rokmaks вместо _Rokmaks_)</div></label>
+                </div>
+                <div class="border" style="cursor: pointer;" onclick="discord()">
+                    <img style="vertical-align: middle; margin-right: 10px;" src="/img/discord.webp" height="30px">
+                    <span style="vertical-align: middle;">Зарегестрироваться</span>
+                </div>
             </div>
             <div style="display: flex;" class="hide" id="first-lang">
                 <img src="/img/hello.webp" height="250">
@@ -311,14 +400,24 @@
                         сайта - русский, но ты можешь сменить его на украинский.</div>
                     <div style="margin-top: 10px;">Какой язык использовать?</div>
                     <div style="white-space: nowrap; margin-top: 5px;"><button style="margin-right: 10px;"
-                            onclick="modal.className='hide'; selectLang('ru')">Русский</button><button
-                            onclick="modal.className='hide'; selectLang('ua')">Украинский</button></div>
+                            onclick="hide('modal'); selectLang('ru')">Русский</button><button
+                            onclick="hide('modal'); selectLang('ua')">Украинский</button></div>
                 </div>
+            </div>
+            <div id="registration-info" class="hide">
+                <div>
+                    <div style="color: #00df00; margin-bottom: 5px">Вы успешно зарегестрировались!</div>
+                    <div>Добро пожаловать на сайт StoneLight</div>
+                </div>
+                <div class="hide">
+                    <div style="color: #ff3b3b; margin-bottom: 5px">Регистрация не удалась</div>
+                    <div>Попробуйте снова</div>
+                </div>
+                
             </div>
             <div class="close" onclick="hide('modal')"></div>
         </div>
         <div id="blacker"></div>
     </div>
 </body>
-
 </html>
