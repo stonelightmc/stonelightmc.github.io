@@ -83,7 +83,9 @@
             document.getElementsByTagName("style")[0].innerHTML = out;
         }
         function closeTrades() {
-            document.getElementById("trade-list").innerHTML = "<span style=\"margin-bottom: 5px; font-size: larger;\">Цены</span>";
+            setTimeout(function () { 
+                document.getElementById("trade-list").innerHTML = "<span style=\"margin-bottom: 5px; font-size: larger;\">Цены</span>";
+             }, 400);
             document.getElementById("modal").classList.add("hide");
         }
         function viewTrades() {
@@ -103,12 +105,13 @@
                 trades.forEach(element => {
                     var fon = document.createElement("div");
                     fon.classList.add("trade-fon");
-                    fon.appendChild(createItem(element["input"], element["input-num"]));
+                    let trade = element.split(":");
+                    fon.appendChild(createItem(trade[0], trade[1]));
                     var arrow = document.createElement("img");
-                    arrow.src = "img/arrow.svg";
+                    arrow.src = "/img/arrow.svg";
                     arrow.style.width = "30px";
                     fon.appendChild(arrow);
-                    fon.appendChild(createItem(element["output"], element["output-num"]));
+                    fon.appendChild(createItem(trade[2], trade[3]));
                     document.getElementById("trade-list").appendChild(fon);
                 });
                 

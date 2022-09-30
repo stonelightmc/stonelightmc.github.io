@@ -99,33 +99,35 @@
             Cookies.remove("reg");
         }
         if(window.location.hash != "") {
-            //СДЕЛАТЬ ЭТО МОДАЛЬНЫМ ОКНОМ
+            var err = null;
             switch (window.location.hash) {
-                case "":
-                    alert("Нет данных для авторизации");
-                    break;
                 case "#serverfull":
-                    alert("Сервер не может обработать столько пользователей. Рекомендую сообщить об этом Uniritial (разработчику сайта)");
+                    err = "Сервер не может обработать столько пользователей. Рекомендую сообщить об этом Uniritial (разработчику сайта)";
                     break;
                 case "#register":
-                    alert("Вы не зарегистрированы");
+                    err = "Вы не зарегистрированы";
                     break;
                 case "#servererr":
-                    alert("Внутренняя ошибка сервера. Рекомендую сообщить об этом Uniritial (разработчику сайта)");
+                    err = "Внутренняя ошибка сервера. Рекомендую сообщить об этом Uniritial (разработчику сайта)";
                     break;
                 default:
                     var num = parseInt(window.location.hash.substring(1, window.location.hash.length));
                     if(!isNaN(num)) {
                         Cookies.set("session", num);
                     } else {
-                        alert("Ошибка кода. Попробуйте залогиниться заново");         
+                        err = "Ошибка кода. Попробуйте залогиниться заново";         
                     }
                     break;
             }
+            if(err != null) {
+                window.addEventListener("load", function(){
+                    document.getElementById("reg-err").textContent = err;
+                    modal(4);
+                });
+            }
             history.pushState("", document.title, window.location.pathname);
-            //СДЕЛАТЬ ЭТО МОДАЛЬНЫМ ОКНОМ
         }
-        window.onload = function load() {
+        window.onload = function() {
             if(Cookies.get('hided') != "true") {
                document.styleSheets[0].deleteRule(6);
                document.getElementById("settingsAlert").checked = true;
@@ -133,29 +135,49 @@
                 document.getElementById("settingsAlert").checked = false;
             }
             if(urlParams.get("err") != null) {
-                modal(3);
                 if(urlParams.get("err") != "ok") {
                     document.getElementById("registration-info").children[0].classList.add("hide");
                     document.getElementById("registration-info").children[1].classList.remove("hide");
                 }
+                modal(3);
             }
             if(Cookies.get('lang') == undefined) {
-                modal(2);
                 document.querySelector('.close').classList.add("hide");
+                modal(2);
             }
+            document.getElementById("skin-file").addEventListener("change", updateSkin);
         };
+        function updateSkin() {
+            var formData = new FormData();
+            formData.append("s", Cookies.get("session"));
+            formData.append("skin", document.getElementById("skin-file").files[0], "skin.png");
+            var skinUpdate = new XMLHttpRequest();
+            skinUpdate.open("POST", "http://stonelightapi.ddns.is74.ru/updateSkin");
+            skinUpdate.onload = function () {
+                if (skinUpdate.status != 200) {
+                    alert("Не удалось обновить скин");
+                } else {
+                    
+                }
+            };
+            skinUpdate.onerror = function() {
+                alert("Не удалось обновить скин");
+            };
+            skinUpdate.send(formData);
+        }
         if(Cookies.get("session") != undefined) {
             var sessionInfo = new XMLHttpRequest();
-            sessionInfo.open('GET', 'https://stonelightapi.ddns.is74.ru/sessionInfo?a=' + Cookies.get("session"));
+            sessionInfo.open("GET", "https://stonelightapi.ddns.is74.ru/sessionInfo?a=" + Cookies.get("session"));
             sessionInfo.onload = function () {
                 if (sessionInfo.status != 200) {
                     document.getElementById("auth-state").textContent = "Войдите заново";
                 } else {
                     let session = JSON.parse(sessionInfo.responseText);
                     document.getElementById("auth-sNick").textContent = session["cn"];
+                    document.getElementById("auth-skin").src = session["sk"] ? "/img/skins/" + session["mn"] + "/1.webp" : "/img/skins/no.webp"
                     document.getElementById("auth-state").textContent = session["cn"];
                     document.getElementById("auth-nick").textContent = session["mn"];
-                    let names = [["Ожидает принятия", "#e8e800"], ["В вайтлисте", "#00c200"]];
+                    let names = [["Аккаунт проверяется", "#000"], ["Ожидает принятия", "#000"], ["В вайтлисте", "#00c200"]];
                     document.getElementById("auth-status").textContent = names[session["s"]][0];
                     document.getElementById("auth-status").style.color = names[session["s"]][1];
                     if(session["s"] == 1) {
@@ -166,9 +188,14 @@
                     hide("auth-login");
                 }
             };
+            sessionInfo.onerror = function() {
+                document.getElementById("auth-state").textContent = "Сервер не отвечает";
+            };
             sessionInfo.send();
         } else {
-            document.getElementById("auth-state").textContent = "Не авторизован";
+            window.addEventListener("load", function(){
+                document.getElementById("auth-state").textContent = "Не авторизован";
+            });
         }
         
     </script>
@@ -194,15 +221,20 @@
                     <div id="auth-info" class="hide">
                         <div style="display: flex; justify-content: center; align-items: center; margin-top: 10px; padding-bottom: 10px; border-bottom: #000 solid 1px;">
                             <div style="display: inline-block; position: relative;">
-                                <img src="/img/skins/Uniritial/1.webp" height="50" id="auth-skin" style="border-radius: 10px; margin-right: 6px;" title="Cкин">
+                                <img height="50" id="auth-skin" style="border-radius: 10px; margin-right: 6px;" title="Cкин">
                             </div>
                             <div>
-                                <div style="font-size: 20px; margin-top: 8px;" id="auth-sNick" title="Упрощённый ник"></div>
+                                <div style="font-size: 20px" id="auth-sNick" title="Упрощённый ник"></div>
                                 <div style="color: grey;" title="Ник в майнкрафте" id="auth-nick"></div>
                             </div>
                         </div>
                         <div style="color: #b5c200; margin-top: 5px;" id="auth-status"></div>
-                        <button style="margin-top: 5px" class="hide" id="auth-cskin">Изменить скин</button>
+                        <div style="margin-top: 10px;">
+                            <label class="hide" id="auth-cskin" for="skin-file">
+                                Изменить скин
+                                <input type="file" id="skin-file" accept="image/png" style="display: none;">
+                            </label>
+                        </div>
                         <button style="margin-top: 5px" class="hide" id="auth-cshop">Добавить магазин</button>
                         <div style="border-top: #000 solid 1px; padding-top: 6px; position: absolute; bottom: 8px; width: 100%; cursor: pointer;">
                             <img style="vertical-align: middle;" src="/img/logout.svg" height="30">
@@ -234,7 +266,7 @@
             <h1 id="mainD" class="trans shadow">StoneLight - ванильный сервер без приватов и доната</h1>
             <div id="secD" class="trans shadow">Выживайте, вступайте в кланы, находите новых друзей и просто
                 весело проводите время :D</div>
-            <div style="display: flex; align-items: center;">
+            <div style="display: flex; align-items: center;" id="img">
                 <a class="white link discord" href="https://discord.gg/GCfnjCsurR" style="margin-right: 10px;">
                     <img src="img/discord.webp" height="40px" style="margin-right: 10px; vertical-align: middle;">
                     <span style="vertical-align: middle; font-size: larger;" class="trans">Вступить в Дискорд</span>
@@ -414,6 +446,10 @@
                     <div>Попробуйте снова</div>
                 </div>
                 
+            </div>
+            <div id="registration-error" class="hide" style="max-width: 400px;">
+                <div style="color: red;">При регистрации произошла ошибка:</div>
+                <div style="font-size: initial;" id="reg-err"></div>
             </div>
             <div class="close" onclick="hide('modal')"></div>
         </div>

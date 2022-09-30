@@ -64,11 +64,13 @@
         var lang;
         window.onload = loadContent;
         function closeTrades() {
-            let arr = document.getElementById("playerList").children;
-            let length = arr.length - 1;
-            for (let i = 0; i < length; i++) {
-                arr[1].remove();
-            }
+            setTimeout(function () { 
+                let arr = document.getElementById("playerList").children;
+                let length = arr.length - 1;
+                for (let i = 0; i < length; i++) {
+                    arr[1].remove();
+                }
+             }, 400);
             document.getElementById("modal").classList.add("hide");
         }
         function viewTrades() {
