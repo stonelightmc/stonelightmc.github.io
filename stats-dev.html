@@ -225,7 +225,7 @@
             }
             playersReq.send();
             setTimeout(function(){
-                if(playersReq.status == 0 && document.getElementById("serverErr").classList.contains(hide)) {
+                if(playersReq.status == 0 && document.getElementById("serverErr").classList.contains("hide")) {
                     let loading = document.createElement('img');
                     loading.src = "/img/load.svg";
                     document.getElementById('players').appendChild(loading);

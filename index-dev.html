@@ -128,7 +128,7 @@
             history.pushState("", document.title, window.location.pathname);
         }
         window.onload = function() {
-            if(Cookies.get('hided') != "true") {
+            if(Cookies.get("hided") != "true") {
                document.styleSheets[0].deleteRule(6);
                document.getElementById("settingsAlert").checked = true;
             } else {
@@ -141,7 +141,7 @@
                 }
                 modal(3);
             }
-            if(Cookies.get('lang') == undefined) {
+            if(Cookies.get("lang") == undefined) {
                 document.querySelector('.close').classList.add("hide");
                 modal(2);
             }
