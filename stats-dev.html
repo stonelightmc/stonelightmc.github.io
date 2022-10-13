@@ -157,7 +157,7 @@
             playersReq.open('GET', 'players.json');
             playersReq.onload = function () {
                 if (playersReq.status != 200) {
-                    alert("Ошибка загрузки игроков");
+                    document.getElementById("serverErr").classList.remove("hide");
                 } else {
                     players = JSON.parse(playersReq.responseText);
                     playersLoaded();
@@ -177,11 +177,11 @@
                 document.getElementById("players").appendChild(createCard(pl[i]["n"], texts[lang][0][0], Math.round(pl[i]["t"] / 7200) / 10, "ч"));
             }
         }
-        function collumns() {
-            var container = document.getElementById("players");
-            var maxWidth = 220;
-            console.log(Math.ceil(container.offsetWidth / maxWidth));
-        }
+        //function collumns() {
+        //    var container = document.getElementById("players");
+        //    var maxWidth = 220;
+        //    console.log(Math.ceil(container.offsetWidth / maxWidth));
+        //}
         window.onload = function() {
             lang = Cookies.get("lang") == undefined ? "ru" : Cookies.get("lang");
             var playersReq = new XMLHttpRequest();
@@ -190,7 +190,7 @@
             //playersReq.responseType = "arraybuffer";
             playersReq.onload = function () {
                 if (playersReq.status != 200) {
-                    alert("Ошибка загрузки игроков");
+                    document.getElementById("serverErr").classList.remove("hide");
                 } else {
                     stats = JSON.parse(playersReq.responseText);
                     /*var arrayBuffer = playersReq.response; // Note: not oReq.responseText
@@ -212,24 +212,28 @@
                             console.log(name);
                         }
                     }*/
-                    stats["players"].sort((a, b) => a["t"] > b["t"] ? -1 : 1);
-                    loadPlayers();
+                    try {
+                        stats["players"].sort((a, b) => a["t"] > b["t"] ? -1 : 1);
+                        loadPlayers();
+                    } catch (error) {
+                        document.getElementById("serverErr").classList.remove("hide");
+                    }
                 }
             };
             playersReq.onerror = function() {
-                alert("Ошибка загрузки игроков");
+                document.getElementById("serverErr").classList.remove("hide");
             }
             playersReq.send();
             setTimeout(function(){
-                if(playersReq.status == 0) {
+                if(playersReq.status == 0 && document.getElementById("serverErr").classList.contains(hide)) {
                     let loading = document.createElement('img');
                     loading.src = "/img/load.svg";
                     document.getElementById('players').appendChild(loading);
                 }
             }, 200);
-            setInterval(function(){
-                collumns();
-            }, 500);
+            //setInterval(function(){
+            //    collumns();
+            //}, 500);
         };
     </script>
 </head>
@@ -266,7 +270,9 @@
         <div class="bestPl"><div class="mar-bot trans-best2">Самое большое количество сломаных блоков</div></div>
     </div>
     <div id="players">
-        
+        <div class="border hide" id="serverErr" style="font-size: 25px; padding: 20px; border-radius: 20px; color: red">
+            Кажется сервер статистики не работает, попробуйте зайти позже
+        </div>
     </div>
     <div id="modal" class="hide">
         <div id="modal-content">
