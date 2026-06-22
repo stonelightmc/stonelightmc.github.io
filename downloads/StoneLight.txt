@@ -1,0 +1,561 @@
+
+Уно карты (Переименовывать бумагу):
+
+Blue Zero
+Blue One
+Blue Two
+Blue Three
+Blue Four
+4colora
+Blue Five
+Blue Six
+Blue Seven
+Blue Eight
+Blue Nine
+Blue Draw Two
+Draw Four
+Blue Reversed
+Blue Skip
+
+Место "Blue" пишите "Green","Red","Yellow" для получения другого цвета
+
+----------------------------------------------------------------------------
+
+Покер карты (54 штуки)(Переименовывать бумагу):
+
+Clubs 2
+Clubs 3
+Clubs 4
+Clubs 5
+Clubs 6
+Clubs 7
+Clubs 8
+Clubs 9
+Clubs 10
+Clubs Jack
+Clubs Queen
+Clubs King
+Joker Black
+Joker Red
+
+Место "Clubs" пишите "Diamond","Heart","Spades" для получения другой масти
+
+----------------------------------------------------------------------------
+
+Украшения на новый год:
+
+Переименовывать сладкие ягоды:
+
+purple tinsel
+purple garland
+
+Место "purple" пишите "Black","blue","brown","cyan","gray","green","light blue","light gray","lime","magenta","orange","pink","red","White","yellow", для получения другого цвета
+
+garland
+wreath
+
+Переименовывать редстоуновая пыль, лазурит, светокаменная пыль:
+
+purple Double String Lights
+purple hanging String Lights
+purple String Lights
+
+Место "purple" пишите "black","blue","brown","cyan","gray","green","light blue","light gray","lime","magenta","orange","pink","red","white","yellow", для получения другого цвета
+
+tree lights
+lights
+
+Переименовывать золотой самородок:
+
+bee ornament
+bee ornament 2
+
+Место "bee" пишите "wither skeleton","skeleton","purple","Black","blue","brown","cyan","gray","green","light blue","light gray","lime","magenta","orange","pink","red","white","yellow", для получения другого цвета
+
+Переименовывать "цвет" шерсть:
+Вы берете тот цвет шерсти в зависимости от нужного вам цвета подарка и соответственно переименуете
+
+black present
+black present 2
+
+Место "black" пишите "purple","blue","brown","cyan","gray","green","light blue","light gray","lime","magenta","orange","pink","red","white","yellow", для получения другого цвета
+
+----------------------------------------------------------------------------
+
+Украшения на хэллоуин:
+
+Переименовывать блок мха:
+
+hanging glare acacia
+fence glare acacia
+
+Место "acacia" пишите "birch","darkoak","jungle","oak","spruce" для получения цвета
+
+Переименовывать камень, каменный кирпич:
+
+gravestone
+gravestone2
+small gravestone
+small gravestone2
+
+Переименовывать любой шлем:
+
+among us Mask
+amon Mask
+anonymous Mask
+Blue Spirit Mask
+carnage Mask
+demogorgon Mask
+duck Mask
+dream Mask
+freddy Mask
+Puppet Mask
+Glowsquid Mask
+herobrine Mask
+Iceologer Mask
+Jack o'lantern Mask
+Jack olantern Mask
+jason Mask
+jigsaw Mask
+dali Mask
+Moobloom Mask
+pennywise Mask
+Pumpkin Mask
+scream Mask
+squid manager Mask
+squid soldier Mask
+squid worker mask
+Green Mask
+Stefan Mask
+venom Mask
+warden Mask
+zach Mask
+
+Переименовывать мембрану фантома:
+
+hanging phantom acacia
+fence phantom acacia
+
+Место "acacia" пишите "birch","darkoak","jungle","oak","spruce" для получения цвета
+
+Переименовывать тыкву:
+
+small pumpkins
+cup
+
+----------------------------------------------------------------------------
+
+Инструменты:
+
+Переименовывать алмазный или незеритовый меч:
+
+candy cleaver
+candy sword
+angel sword
+cactus cleaver
+cactus sword
+cactus spear
+cobalt cleaver
+cobalt sword
+cobalt spear
+cursed cleaver
+cursed sword
+diamond cleaver
+diamond spear
+Elven sword
+emerald cleaver
+emerald sword
+energy cleaver
+Energy sword
+fire cleaver
+fire sword
+glass cleaver
+glass sword
+honey cleaver
+honey sword
+kyanite cleaver
+kyanite sword
+netherite cleaver
+netherite spear
+nova sword
+nova spear
+ruby cleaver
+ruby sword
+ruby spear
+sculk sword
+shroom sword
+snow sword
+snow spear
+soulfire cleaver
+soulfire sword
+
+Переименовывать любой меч:
+
+Arthur
+Nemesis
+Poseidon
+Zagreus
+
+Переименовывать алмазный или незеритовый топор:
+
+candy battleaxe
+candy axe
+angel battleaxe
+angel axe
+cactus battleaxe
+cactus axe
+cobalt battleaxe
+cobalt axe
+cursed battleaxe
+cursed axe
+diamond battleaxe
+emerald battleaxe
+emerald axe
+Energy battleaxe
+Energy axe
+fire battleaxe
+fire axe
+glass battleaxe
+glass axe
+honey battleaxe
+honey axe
+kyanite battleaxe
+kyanite axe
+netherite battleaxe
+nova battleaxe
+nova axe
+ruby battleaxe
+ruby axe
+sculk axe
+shroom axe
+snow battleaxe
+snow axe
+soulfire battleaxe
+soulfire axe
+
+Переименовывать любой топор:
+
+Arthur
+Nemesis
+Poseidon
+Zagreus
+
+Переименовывать алмазную или незеритовую мотыгу:
+
+candy hoe
+angel hoe
+cactus hoe
+cobalt hoe
+cursed hoe
+emerald hoe
+Energy hoe
+fire hoe
+glass hoe
+honey hoe
+kyanite hoe
+nova hoe
+ruby hoe
+sculk hoe
+shroom hoe
+snow hoe
+soulfire hoe
+
+Переименовывать алмазную или незеритовую кирку:
+
+candy pickaxe
+angel pickaxe
+cactus pickaxe
+cobalt pickaxe
+cursed pickaxe
+emerald pickaxe
+Energy pickaxe
+fire pickaxe
+glass pickaxe
+honey pickaxe
+kyanite pickaxe
+nova pickaxe
+ruby pickaxe
+sculk pickaxe
+shroom pickaxe
+snow pickaxe
+soulfire pickaxe
+
+Переименовывать алмазную или незеритовую лопату:
+
+candy shovel
+angel shovel
+cactus shovel
+cobalt shovel
+cursed shovel
+emerald shovel
+Energy shovel
+fire shovel
+glass shovel
+honey shovel
+kyanite shovel
+nova shovel
+puffer shovel
+ruby shovel
+sculk shovel
+shroom shovel
+snow shovel
+soulfire shovel
+
+Переименовывать лук:
+
+angel bow
+cobalt bow
+elven bow
+Energy bow
+fire bow
+nova bow
+ruby bow
+sculk bow
+snow bow
+soulfire bow
+
+Переименовывать арбалет:
+
+angel crossbow
+cobalt crossbow
+elven crossbow
+Energy crossbow
+fire crossbow
+nova crossbow
+ruby crossbow
+soulfire crossbow
+
+Переименовывать ножници:
+
+candy shears
+coral shears
+diamond shears
+emerald shears
+
+Переименовывать удочку:
+
+coral fishing rod
+pufferfishing rod
+
+Переименовывать трезубец:
+
+coral trident
+
+Переименовывать щит:
+
+amethyst shield
+balistic shield
+bamboo shield
+Druid shield
+
+----------------------------------------------------------------------------
+
+Броня:
+
+Переименовывать алмазный или незеритовый шлем:
+
+elf helmet
+santa helmet
+angel helmet
+cactus helmet
+cobalt helmet
+coral helmet
+crimson helmet
+amethyst crown
+diamond crown
+ruby crown
+emerald crown
+king's crown
+techno crown
+techno's crown
+druid helmet
+emerald helmet
+ender helmet
+energy helmet
+fire helmet
+glass helmet
+green helmet
+halo
+halo helmet
+honey helmet
+invisible helmet
+kyanite helmet
+nova helmet
+royal kyanite helmet
+ruby helmet
+scuba helmet
+sculk helmet
+shroom helmet
+shulker helmet
+snow helmet
+soulfire helmet
+space helmet
+turtle helmet
+warden
+
+Переименовывать алмазный или незеритовый нагрудник:
+
+elf chestplate
+santa chestplate
+angel chestplate
+cactus chestplate
+cobalt chestplate
+coral chestplate
+crimson chestplate
+druid chestplate
+emerald chestplate
+ender chestplate
+energy chestplate
+fire chestplate
+glass chestplate
+green chestplate
+honey chestplate
+invisible chestplate
+kyanite chestplate
+nova chestplate
+royal kyanite chestplate
+ruby chestplate
+scuba chestplate
+sculk chestplate
+shroom chestplate
+shulker chestplate
+snow chestplate
+soulfire chestplate
+space chestplate
+turtle chestplate
+warden
+
+Переименовывать алмазные или незеритовые поножи:
+
+elf leggings
+santa leggings
+angel leggings
+cactus leggings
+cobalt leggings
+coral leggings
+crimson leggings
+druid leggings
+emerald leggings
+ender leggings
+energy leggings
+fire leggings
+glass leggings
+green leggings
+honey leggings
+invisible leggings
+kyanite leggings
+nova leggings
+royal kyanite leggings
+ruby leggings
+scuba leggings
+sculk leggings
+shroom leggings
+shulker leggings
+snow leggings
+soulfire leggings
+space leggings
+turtle leggings
+warden
+
+Переименовывать алмазные или незеритовые ботинки:
+
+elf boots
+santa boots
+angel boots
+cactus boots
+cobalt boots
+coral boots
+crimson boots
+druid boots
+emerald boots
+ender boots
+energy boots
+fire boots
+glass boots
+green boots
+honey boots
+invisible boots
+kyanite boots
+nova boots
+royal kyanite boots
+ruby boots
+scuba boots
+sculk boots
+shroom boots
+shulker boots
+snow boots
+soulfire boots
+space boots
+turtle boots
+warden
+
+Переименовывать элитры:
+
+angel elytra
+cursed elytra
+dark elytra
+ender elytra
+fire elytra
+eflytra
+glass elytra
+beelytra
+phantom elytra
+sculk elytra
+soulfire elytra
+void elytra
+
+Переименовывать вырезанную тыкву:
+
+antlers
+scarf
+Bloody Arrow
+Bunny Ears
+Cooking Pot
+Crown
+Fish Bowl
+Hard Hat
+Light Bulb Off
+Light Bulb On
+Luigi Hat
+Miners Helmet
+Rice Farmer Hat
+Santa Beard
+Santa Hat
+Santa Hat And Beard
+Snorkel
+Tiarra
+Top Hat
+Tree Hat
+TV
+Witch Hat
+Wizard Hat
+
+----------------------------------------------------------------------------
+
+Разные предметы:
+
+Переименовывать бутылочку меда:
+
+Easter Basket
+
+Переименовывать сушённую ламинарию:
+
+Fish Feed
+
+Переименовывать палку:
+
+Magic Wand
+Wooden Spoon
+
+Переименовывать кирпич:
+
+TV Remote
+
+Переименовывать печенье:
+
+Milk Chocolate
+Milk Chocolate In Foil
+Milk Chocolate Hart
+White Chocolate
+White Chocolate In Foil
+White Chocolate Hart
