@@ -71,6 +71,6 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;background:lin
 .theme-toggle{width:42px;height:42px;border-radius:12px;border:1px solid var(--line);background:var(--panel);color:var(--text);cursor:pointer;font-size:18px;transition:.2s}
 .theme-toggle:hover{transform:translateY(-2px)}
 .header-actions{display:flex;align-items:center;gap:18px}
-.stats strong{color:#3a2818}.stats span{color:#7d6a58;font-weight:500}
+.stats strong{color:#3a2818}.stats span{color:#7d6a58;font-weight:500}:root.dark .stats strong{color:#edf3ff}:root.dark .stats span{color:#9fb0c8}
 @keyframes logoDrift{0%,100%{transform:translateY(0) rotate(-1deg) scale(1)}50%{transform:translateY(-16px) rotate(2deg) scale(1.025)}}@keyframes softPulse{0%,100%{transform:scale(.96);opacity:.54}50%{transform:scale(1.08);opacity:.86}}@keyframes ember{0%,100%{transform:translate3d(0,0,0) scale(.85);opacity:.36}50%{transform:translate3d(18px,-22px,0) scale(1.15);opacity:.92}}
 @media(max-width:760px){.hero-visual{min-height:300px}.logo-stage{width:min(330px,90vw)}.floating-label{right:18px;bottom:28px}.nav{background:#fff7ea}}
