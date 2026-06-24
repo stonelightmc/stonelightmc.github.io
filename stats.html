@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>StoneLight — статистика сервера</title>
+  <meta name="description" content="Статистика Minecraft сервера StoneLight: статус, онлайн, графік активності та топ гравців." />
+  <link rel="icon" href="assets/logo.png" type="image/png" />
+  <link rel="stylesheet" href="assets/styles.css" />
+  <script defer src="assets/script.js"></script>
+  <script defer src="assets/stats.js"></script>
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="index.html#top" aria-label="StoneLight home"><img src="assets/logo.png" alt="StoneLight logo" /><span>StoneLight</span></a>
+    <div class="header-actions">
+      <button id="theme-toggle" class="theme-toggle" aria-label="Перемкнути тему">🌙</button>
+      <button class="nav-toggle" aria-label="Відкрити меню" aria-expanded="false">☰</button>
+      <nav class="nav" aria-label="Головна навігація">
+        <a href="index.html#about">Про сервер</a>
+        <a href="index.html#features">Фішки</a>
+        <a href="index.html#join">Підключення</a>
+        <a href="index.html#downloads">Корисне</a>
+        <a href="stats.html" aria-current="page">Статистика</a>
+        <a href="index.html#links">Посилання</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="section subhero stats-hero">
+      <p class="eyebrow">Live dashboard</p>
+      <h1>Статистика StoneLight</h1>
+      <p class="lead">Статус сервера, графік активності та топ гравців за часом на сервері.</p>
+    </section>
+
+    <section class="section stats-dashboard">
+      <article class="dashboard-card server-live-card">
+        <div class="section-head compact">
+          <div>
+            <p class="eyebrow">Статус</p>
+            <h2>Сервер зараз</h2>
+          </div>
+          <button class="btn small ghost" id="refresh-status" type="button">Оновити</button>
+        </div>
+
+        <div class="live-status-line">
+          <span class="status-dot checking" id="stats-status-dot"></span>
+          <div>
+            <strong id="stats-status-title">Перевірка статусу...</strong>
+            <p id="stats-status-text">Java: stonelight.apexmc.co</p>
+          </div>
+        </div>
+
+        <div class="live-meta-grid">
+          <div><strong id="stats-online-count">—</strong><span>онлайн</span></div>
+          <div><strong id="stats-version">—</strong><span>версія</span></div>
+          <div><strong id="stats-latency">—</strong><span>ping API</span></div>
+        </div>
+
+        <div class="online-list-wrap">
+          <h3>Гравці онлайн</h3>
+          <div class="online-list" id="online-list">
+            <p class="muted">Список зʼявиться, якщо API повертає імена гравців.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="dashboard-card chart-card">
+        <div class="section-head compact">
+          <div>
+            <p class="eyebrow">Онлайн</p>
+            <h2>Графік активності</h2>
+          </div>
+          <div class="range-switch" aria-label="Період графіка">
+            <button class="range-btn active" data-range="day" type="button">День</button>
+            <button class="range-btn" data-range="week" type="button">Тиждень</button>
+            <button class="range-btn" data-range="month" type="button">Місяць</button>
+          </div>
+        </div>
+        <div class="chart-shell">
+          <canvas id="online-chart" width="960" height="380" aria-label="Графік онлайну"></canvas>
+        </div>
+        <p class="note soft">Зараз графік читає дані з <code>assets/server-stats.json</code>. Для реальної статистики потрібно періодично оновлювати цей файл із плагіна/скрипта на сервері.</p>
+      </article>
+    </section>
+
+    <section class="section">
+      <div class="section-head with-action">
+        <div>
+          <p class="eyebrow">Топ гравців</p>
+          <h2>Найактивніші гравці</h2>
+          <p>Голови беруться через CraftHead, час — із локального файлу статистики.</p>
+        </div>
+      </div>
+      <div class="players-grid" id="top-players">
+        <article class="player-card skeleton"></article>
+        <article class="player-card skeleton"></article>
+        <article class="player-card skeleton"></article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><p>© StoneLight</p><p>Ми жодним чином не пов’язані з Mojang AB і не схвалені ними.</p></footer>
+</body>
+</html>
