@@ -1,5 +1,5 @@
 {
-  "generatedAt":"2026-06-25T01:11:58.824Z",
+  "generatedAt":"2026-06-25T01:21:58.824Z",
   "server":{
     "online":true,
     "players":0,
@@ -20,7 +20,8 @@
       {"time":"2026-06-25T00:41:58.774Z","timestamp":1782348118774,"label":"00:41","online":0,"players":0},
       {"time":"2026-06-25T00:51:58.824Z","timestamp":1782348718824,"label":"00:51","online":0,"players":0},
       {"time":"2026-06-25T01:01:58.824Z","timestamp":1782349318824,"label":"01:01","online":0,"players":0},
-      {"time":"2026-06-25T01:11:58.824Z","timestamp":1782349918824,"label":"01:11","online":0,"players":0}
+      {"time":"2026-06-25T01:11:58.824Z","timestamp":1782349918824,"label":"01:11","online":0,"players":0},
+      {"time":"2026-06-25T01:21:58.824Z","timestamp":1782350518824,"label":"01:21","online":0,"players":0}
     ],
     "week":[
       {"time":"2026-06-25T00:38:16.979Z","timestamp":1782347896979,"label":"25.06","online":0,"players":0},
@@ -29,7 +30,8 @@
       {"time":"2026-06-25T00:41:58.774Z","timestamp":1782348118774,"label":"25.06","online":0,"players":0},
       {"time":"2026-06-25T00:51:58.824Z","timestamp":1782348718824,"label":"25.06","online":0,"players":0},
       {"time":"2026-06-25T01:01:58.824Z","timestamp":1782349318824,"label":"25.06","online":0,"players":0},
-      {"time":"2026-06-25T01:11:58.824Z","timestamp":1782349918824,"label":"25.06","online":0,"players":0}
+      {"time":"2026-06-25T01:11:58.824Z","timestamp":1782349918824,"label":"25.06","online":0,"players":0},
+      {"time":"2026-06-25T01:21:58.824Z","timestamp":1782350518824,"label":"25.06","online":0,"players":0}
     ],
     "month":[
       {"time":"2026-06-25T00:38:16.979Z","timestamp":1782347896979,"label":"25.06","online":0,"players":0},
@@ -38,7 +40,8 @@
       {"time":"2026-06-25T00:41:58.774Z","timestamp":1782348118774,"label":"25.06","online":0,"players":0},
       {"time":"2026-06-25T00:51:58.824Z","timestamp":1782348718824,"label":"25.06","online":0,"players":0},
       {"time":"2026-06-25T01:01:58.824Z","timestamp":1782349318824,"label":"25.06","online":0,"players":0},
-      {"time":"2026-06-25T01:11:58.824Z","timestamp":1782349918824,"label":"25.06","online":0,"players":0}
+      {"time":"2026-06-25T01:11:58.824Z","timestamp":1782349918824,"label":"25.06","online":0,"players":0},
+      {"time":"2026-06-25T01:21:58.824Z","timestamp":1782350518824,"label":"25.06","online":0,"players":0}
     ]
   }
 }
