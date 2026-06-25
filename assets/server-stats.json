@@ -1,17 +1,20 @@
 {
-  "generatedAt":"2026-06-25T06:21:58.824Z",
+  "generatedAt":"2026-06-25T06:31:58.824Z",
   "server":{
     "online":true,
-    "players":0,
+    "players":1,
     "maxPlayers":30,
     "software":"Paper",
     "coreVersion":"26.1.2.build.70-stable",
     "fullVersion":"26.1.2-70-70eaed6 (MC: 26.1.2)"
   },
-  "onlinePlayers":[],
+  "onlinePlayers":[
+    {"name":"BlackToshida","uuid":"b5eb02e9-148f-359c-b1a3-6878c23e793b","head":"https://crafthead.net/helm/b5eb02e9-148f-359c-b1a3-6878c23e793b/64"}
+  ],
   "topPlayers":[
     {"rank":1,"name":".UFOshnik16143","uuid":"00000000-0000-0000-0009-01fc3dca115f","head":"https://crafthead.net/helm/00000000-0000-0000-0009-01fc3dca115f/64","playtimeMillis":4407081,"playtimeSeconds":4407,"playtime":"1 год 13 хв"},
-    {"rank":2,"name":"DedKob","uuid":"eea77d19-5de2-355f-a29c-d5dcb09af117","head":"https://crafthead.net/helm/eea77d19-5de2-355f-a29c-d5dcb09af117/64","playtimeMillis":314460,"playtimeSeconds":314,"playtime":"5 хв"}
+    {"rank":2,"name":"BlackToshida","uuid":"b5eb02e9-148f-359c-b1a3-6878c23e793b","head":"https://crafthead.net/helm/b5eb02e9-148f-359c-b1a3-6878c23e793b/64","playtimeMillis":481844,"playtimeSeconds":481,"playtime":"8 хв"},
+    {"rank":3,"name":"DedKob","uuid":"eea77d19-5de2-355f-a29c-d5dcb09af117","head":"https://crafthead.net/helm/eea77d19-5de2-355f-a29c-d5dcb09af117/64","playtimeMillis":314460,"playtimeSeconds":314,"playtime":"5 хв"}
   ],
   "activity":{
     "day":[
@@ -52,7 +55,8 @@
       {"time":"2026-06-25T05:51:58.824Z","timestamp":1782366718824,"label":"05:51","online":0,"players":0},
       {"time":"2026-06-25T06:01:58.824Z","timestamp":1782367318824,"label":"06:01","online":0,"players":0},
       {"time":"2026-06-25T06:11:58.824Z","timestamp":1782367918824,"label":"06:11","online":0,"players":0},
-      {"time":"2026-06-25T06:21:58.824Z","timestamp":1782368518824,"label":"06:21","online":0,"players":0}
+      {"time":"2026-06-25T06:21:58.824Z","timestamp":1782368518824,"label":"06:21","online":0,"players":0},
+      {"time":"2026-06-25T06:31:58.824Z","timestamp":1782369118824,"label":"06:31","online":1,"players":1}
     ],
     "week":[
       {"time":"2026-06-25T00:38:16.979Z","timestamp":1782347896979,"label":"25.06","online":0,"players":0},
@@ -92,7 +96,8 @@
       {"time":"2026-06-25T05:51:58.824Z","timestamp":1782366718824,"label":"25.06","online":0,"players":0},
       {"time":"2026-06-25T06:01:58.824Z","timestamp":1782367318824,"label":"25.06","online":0,"players":0},
       {"time":"2026-06-25T06:11:58.824Z","timestamp":1782367918824,"label":"25.06","online":0,"players":0},
-      {"time":"2026-06-25T06:21:58.824Z","timestamp":1782368518824,"label":"25.06","online":0,"players":0}
+      {"time":"2026-06-25T06:21:58.824Z","timestamp":1782368518824,"label":"25.06","online":0,"players":0},
+      {"time":"2026-06-25T06:31:58.824Z","timestamp":1782369118824,"label":"25.06","online":1,"players":1}
     ],
     "month":[
       {"time":"2026-06-25T00:38:16.979Z","timestamp":1782347896979,"label":"25.06","online":0,"players":0},
@@ -132,7 +137,8 @@
       {"time":"2026-06-25T05:51:58.824Z","timestamp":1782366718824,"label":"25.06","online":0,"players":0},
       {"time":"2026-06-25T06:01:58.824Z","timestamp":1782367318824,"label":"25.06","online":0,"players":0},
       {"time":"2026-06-25T06:11:58.824Z","timestamp":1782367918824,"label":"25.06","online":0,"players":0},
-      {"time":"2026-06-25T06:21:58.824Z","timestamp":1782368518824,"label":"25.06","online":0,"players":0}
+      {"time":"2026-06-25T06:21:58.824Z","timestamp":1782368518824,"label":"25.06","online":0,"players":0},
+      {"time":"2026-06-25T06:31:58.824Z","timestamp":1782369118824,"label":"25.06","online":1,"players":1}
     ]
   }
 }
