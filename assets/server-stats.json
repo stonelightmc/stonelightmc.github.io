@@ -1,8 +1,8 @@
 {
-  "generatedAt":"2026-06-25T18:52:50.746Z",
+  "generatedAt":"2026-06-25T19:01:26.588Z",
   "server":{
     "online":true,
-    "players":7,
+    "players":6,
     "maxPlayers":30,
     "software":"Paper",
     "coreVersion":"26.1.2.build.70-stable",
@@ -13,24 +13,23 @@
     {"name":".UFOshnik16143","uuid":"00000000-0000-0000-0009-01fc3dca115f","head":"https://crafthead.net/helm/00000000-0000-0000-0009-01fc3dca115f/64"},
     {"name":"Liriz","uuid":"0ec866c2-4125-3325-b11b-5faf180fefe1","head":"https://crafthead.net/helm/0ec866c2-4125-3325-b11b-5faf180fefe1/64"},
     {"name":"maximzhaba","uuid":"a7b6db5a-86ed-37fd-ab01-206909cb2976","head":"https://crafthead.net/helm/a7b6db5a-86ed-37fd-ab01-206909cb2976/64"},
-    {"name":"BlackToshida","uuid":"b5eb02e9-148f-359c-b1a3-6878c23e793b","head":"https://crafthead.net/helm/b5eb02e9-148f-359c-b1a3-6878c23e793b/64"},
     {"name":"ProGrusha","uuid":"28e2563a-e156-30a8-83b0-5f7869c58e2f","head":"https://crafthead.net/helm/28e2563a-e156-30a8-83b0-5f7869c58e2f/64"},
     {"name":"letfungus","uuid":"d203af76-2695-36a5-9191-6e1264b1c685","head":"https://crafthead.net/helm/d203af76-2695-36a5-9191-6e1264b1c685/64"}
   ],
   "topPlayers":[
-    {"rank":1,"name":"Liriz","uuid":"0ec866c2-4125-3325-b11b-5faf180fefe1","head":"https://crafthead.net/helm/0ec866c2-4125-3325-b11b-5faf180fefe1/64","playtimeMillis":30400500,"playtimeSeconds":30400,"playtime":"8 год 26 хв"},
+    {"rank":1,"name":"Liriz","uuid":"0ec866c2-4125-3325-b11b-5faf180fefe1","head":"https://crafthead.net/helm/0ec866c2-4125-3325-b11b-5faf180fefe1/64","playtimeMillis":30916342,"playtimeSeconds":30916,"playtime":"8 год 35 хв"},
     {"rank":2,"name":"FunnyVanyaTV","uuid":"2770dc54-d71e-3cc6-a45a-03fd0d5775e6","head":"https://crafthead.net/helm/2770dc54-d71e-3cc6-a45a-03fd0d5775e6/64","playtimeMillis":25973315,"playtimeSeconds":25973,"playtime":"7 год 12 хв"},
     {"rank":3,"name":"Sushi_sushi05","uuid":"62cdb002-e03d-3bdf-a69e-df2a9233a7e7","head":"https://crafthead.net/helm/62cdb002-e03d-3bdf-a69e-df2a9233a7e7/64","playtimeMillis":19712200,"playtimeSeconds":19712,"playtime":"5 год 28 хв"},
     {"rank":4,"name":"kotik","uuid":"17b07362-3ef1-3036-afec-7cc574cb5747","head":"https://crafthead.net/helm/17b07362-3ef1-3036-afec-7cc574cb5747/64","playtimeMillis":18983129,"playtimeSeconds":18983,"playtime":"5 год 16 хв"},
     {"rank":5,"name":"BlackToshida","uuid":"b5eb02e9-148f-359c-b1a3-6878c23e793b","head":"https://crafthead.net/helm/b5eb02e9-148f-359c-b1a3-6878c23e793b/64","playtimeMillis":15534646,"playtimeSeconds":15534,"playtime":"4 год 18 хв"},
-    {"rank":6,"name":"letfungus","uuid":"d203af76-2695-36a5-9191-6e1264b1c685","head":"https://crafthead.net/helm/d203af76-2695-36a5-9191-6e1264b1c685/64","playtimeMillis":9060961,"playtimeSeconds":9060,"playtime":"2 год 31 хв"},
-    {"rank":7,"name":"Certezarh","uuid":"3044325b-f58f-3fdb-a507-ba9dcf40c64f","head":"https://crafthead.net/helm/3044325b-f58f-3fdb-a507-ba9dcf40c64f/64","playtimeMillis":8953733,"playtimeSeconds":8953,"playtime":"2 год 29 хв"},
-    {"rank":8,"name":"ProGrusha","uuid":"28e2563a-e156-30a8-83b0-5f7869c58e2f","head":"https://crafthead.net/helm/28e2563a-e156-30a8-83b0-5f7869c58e2f/64","playtimeMillis":8880059,"playtimeSeconds":8880,"playtime":"2 год 28 хв"},
-    {"rank":9,"name":".UFOshnik16143","uuid":"00000000-0000-0000-0009-01fc3dca115f","head":"https://crafthead.net/helm/00000000-0000-0000-0009-01fc3dca115f/64","playtimeMillis":8332060,"playtimeSeconds":8332,"playtime":"2 год 18 хв"},
-    {"rank":10,"name":"maximzhaba","uuid":"a7b6db5a-86ed-37fd-ab01-206909cb2976","head":"https://crafthead.net/helm/a7b6db5a-86ed-37fd-ab01-206909cb2976/64","playtimeMillis":6794984,"playtimeSeconds":6794,"playtime":"1 год 53 хв"},
+    {"rank":6,"name":"letfungus","uuid":"d203af76-2695-36a5-9191-6e1264b1c685","head":"https://crafthead.net/helm/d203af76-2695-36a5-9191-6e1264b1c685/64","playtimeMillis":9576803,"playtimeSeconds":9576,"playtime":"2 год 39 хв"},
+    {"rank":7,"name":"ProGrusha","uuid":"28e2563a-e156-30a8-83b0-5f7869c58e2f","head":"https://crafthead.net/helm/28e2563a-e156-30a8-83b0-5f7869c58e2f/64","playtimeMillis":9395901,"playtimeSeconds":9395,"playtime":"2 год 36 хв"},
+    {"rank":8,"name":"Certezarh","uuid":"3044325b-f58f-3fdb-a507-ba9dcf40c64f","head":"https://crafthead.net/helm/3044325b-f58f-3fdb-a507-ba9dcf40c64f/64","playtimeMillis":8953733,"playtimeSeconds":8953,"playtime":"2 год 29 хв"},
+    {"rank":9,"name":".UFOshnik16143","uuid":"00000000-0000-0000-0009-01fc3dca115f","head":"https://crafthead.net/helm/00000000-0000-0000-0009-01fc3dca115f/64","playtimeMillis":8847902,"playtimeSeconds":8847,"playtime":"2 год 27 хв"},
+    {"rank":10,"name":"maximzhaba","uuid":"a7b6db5a-86ed-37fd-ab01-206909cb2976","head":"https://crafthead.net/helm/a7b6db5a-86ed-37fd-ab01-206909cb2976/64","playtimeMillis":7310826,"playtimeSeconds":7310,"playtime":"2 год 1 хв"},
     {"rank":11,"name":"trideron","uuid":"32800bed-69aa-3da7-b413-8645566ea6a2","head":"https://crafthead.net/helm/32800bed-69aa-3da7-b413-8645566ea6a2/64","playtimeMillis":5055300,"playtimeSeconds":5055,"playtime":"1 год 24 хв"},
     {"rank":12,"name":"Mmanz","uuid":"2334b35c-cd29-3d75-a594-02c91e6b0c35","head":"https://crafthead.net/helm/2334b35c-cd29-3d75-a594-02c91e6b0c35/64","playtimeMillis":4869050,"playtimeSeconds":4869,"playtime":"1 год 21 хв"},
-    {"rank":13,"name":"NarzhanP","uuid":"52aac06b-2950-3283-bcd0-51298b6bf0aa","head":"https://crafthead.net/helm/52aac06b-2950-3283-bcd0-51298b6bf0aa/64","playtimeMillis":4334508,"playtimeSeconds":4334,"playtime":"1 год 12 хв"},
+    {"rank":13,"name":"NarzhanP","uuid":"52aac06b-2950-3283-bcd0-51298b6bf0aa","head":"https://crafthead.net/helm/52aac06b-2950-3283-bcd0-51298b6bf0aa/64","playtimeMillis":4850350,"playtimeSeconds":4850,"playtime":"1 год 20 хв"},
     {"rank":14,"name":"Doktormotorfil","uuid":"4bd8854e-0bac-38ac-837a-78e8cfab5a36","head":"https://crafthead.net/helm/4bd8854e-0bac-38ac-837a-78e8cfab5a36/64","playtimeMillis":2406232,"playtimeSeconds":2406,"playtime":"40 хв"},
     {"rank":15,"name":"proto3619","uuid":"87f3cd24-bda3-31a6-974e-547c7e2e07df","head":"https://crafthead.net/helm/87f3cd24-bda3-31a6-974e-547c7e2e07df/64","playtimeMillis":2229243,"playtimeSeconds":2229,"playtime":"37 хв"},
     {"rank":16,"name":"KtoZnae","uuid":"89357e14-34f8-3abb-bbb9-901f188a24b4","head":"https://crafthead.net/helm/89357e14-34f8-3abb-bbb9-901f188a24b4/64","playtimeMillis":1914676,"playtimeSeconds":1914,"playtime":"31 хв"},
@@ -151,7 +150,8 @@
       {"time":"2026-06-25T18:21:26.588Z","timestamp":1782411686588,"label":"18:21","online":4,"players":4},
       {"time":"2026-06-25T18:31:26.588Z","timestamp":1782412286588,"label":"18:31","online":6,"players":6},
       {"time":"2026-06-25T18:41:26.588Z","timestamp":1782412886588,"label":"18:41","online":4,"players":4},
-      {"time":"2026-06-25T18:51:26.588Z","timestamp":1782413486588,"label":"18:51","online":7,"players":7}
+      {"time":"2026-06-25T18:51:26.588Z","timestamp":1782413486588,"label":"18:51","online":7,"players":7},
+      {"time":"2026-06-25T19:01:26.588Z","timestamp":1782414086588,"label":"19:01","online":6,"players":6}
     ],
     "week":[
       {"time":"2026-06-25T00:38:16.979Z","timestamp":1782347896979,"label":"25.06","online":0,"players":0},
@@ -267,7 +267,8 @@
       {"time":"2026-06-25T18:21:26.588Z","timestamp":1782411686588,"label":"25.06","online":4,"players":4},
       {"time":"2026-06-25T18:31:26.588Z","timestamp":1782412286588,"label":"25.06","online":6,"players":6},
       {"time":"2026-06-25T18:41:26.588Z","timestamp":1782412886588,"label":"25.06","online":4,"players":4},
-      {"time":"2026-06-25T18:51:26.588Z","timestamp":1782413486588,"label":"25.06","online":7,"players":7}
+      {"time":"2026-06-25T18:51:26.588Z","timestamp":1782413486588,"label":"25.06","online":7,"players":7},
+      {"time":"2026-06-25T19:01:26.588Z","timestamp":1782414086588,"label":"25.06","online":6,"players":6}
     ],
     "month":[
       {"time":"2026-06-25T00:38:16.979Z","timestamp":1782347896979,"label":"25.06","online":0,"players":0},
@@ -383,7 +384,8 @@
       {"time":"2026-06-25T18:21:26.588Z","timestamp":1782411686588,"label":"25.06","online":4,"players":4},
       {"time":"2026-06-25T18:31:26.588Z","timestamp":1782412286588,"label":"25.06","online":6,"players":6},
       {"time":"2026-06-25T18:41:26.588Z","timestamp":1782412886588,"label":"25.06","online":4,"players":4},
-      {"time":"2026-06-25T18:51:26.588Z","timestamp":1782413486588,"label":"25.06","online":7,"players":7}
+      {"time":"2026-06-25T18:51:26.588Z","timestamp":1782413486588,"label":"25.06","online":7,"players":7},
+      {"time":"2026-06-25T19:01:26.588Z","timestamp":1782414086588,"label":"25.06","online":6,"players":6}
     ]
   }
 }
