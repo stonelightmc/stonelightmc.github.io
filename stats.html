@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Статистика сервера — StoneLight</title>
+  <meta name="description" content="Жива статистика Minecraft сервера StoneLight: онлайн, графік активності, топ гравців." />
+  <link rel="icon" href="assets/logo.png" type="image/png" />
+  <link rel="stylesheet" href="assets/styles.css" />
+  <script defer src="assets/script.js"></script>
+  <script defer src="assets/stats.js"></script>
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="index.html#top" aria-label="StoneLight home"><img src="assets/logo.png" alt="StoneLight logo" /><span>StoneLight</span></a>
+    <div class="header-actions">
+      <button id="theme-toggle" class="theme-toggle">🌙</button>
+      <button class="nav-toggle" aria-label="Відкрити меню" aria-expanded="false">☰</button>
+      <nav class="nav" aria-label="Головна навігація">
+        <a href="index.html#about">Про сервер</a><a href="index.html#features">Фішки</a><a href="index.html#join">Підключення</a><a href="index.html#downloads">Корисне</a><a href="stats.html" aria-current="page">Статистика</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="section stats-hero">
+      <div>
+        <p class="eyebrow">StoneLight Stats</p>
+        <h1>Статистика сервера</h1>
+        <p class="lead">Онлайн, активність за часом і топ гравців StoneLight. Дані оновлюються автоматично через серверний плагін.</p>
+      </div>
+      <div class="stats-mini-card">
+        <span class="status-dot checking" id="stats-status-dot"></span>
+        <div>
+          <strong id="stats-status-title">Перевірка статусу...</strong>
+          <p id="stats-status-text">Очікуємо дані сервера</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section stats-dashboard">
+      <article class="stats-panel server-overview-panel">
+        <div class="stats-panel-head">
+          <div><p class="eyebrow">Live</p><h2>Стан сервера</h2></div>
+          <button class="btn secondary small" id="status-refresh" type="button">Оновити</button>
+        </div>
+        <div class="server-metrics">
+          <div><strong id="metric-online">—</strong><span>гравців онлайн</span></div>
+          <div><strong id="metric-max">—</strong><span>максимум</span></div>
+          <div><strong id="metric-ping" class="metric-ping">—</strong><span>пінг</span></div>
+          <div><strong id="metric-tps">—</strong><span>TPS</span></div>
+          <div><strong id="metric-mspt">—</strong><span>MSPT</span></div>
+          <div><strong id="metric-core">Paper 26.1.2</strong><span>ядро</span></div>
+        </div>
+      </article>
+
+      <div class="stats-live-row">
+        <article class="stats-panel online-panel">
+          <div class="section-head compact"><p class="eyebrow">Players</p><h2>Гравці онлайн</h2></div>
+          <div class="online-players" id="online-players"><p class="muted">Список гравців завантажується...</p></div>
+        </article>
+
+        <article class="stats-panel chart-panel">
+          <div class="stats-panel-head">
+            <div><p class="eyebrow">Activity</p><h2>Графік активності</h2></div>
+            <div class="range-tabs" role="tablist" aria-label="Період графіка">
+              <button class="range-tab active" data-range="day">День</button>
+              <button class="range-tab" data-range="week">Тиждень</button>
+              <button class="range-tab" data-range="month">Місяць</button>
+            </div>
+          </div>
+          <div class="chart-wrap"><canvas id="activity-chart" width="980" height="300" aria-label="Графік онлайну" role="img"></canvas></div>
+          <p class="chart-note" id="chart-note">Оновлення кожні 10 хвилин.</p>
+        </article>
+      </div>
+
+      <article class="stats-panel top-panel">
+        <div class="section-head compact"><p class="eyebrow">Top</p><h2>Топ гравців</h2></div>
+        <div class="top-players" id="top-players"><p class="muted">Топ гравців завантажується...</p></div>
+        <div class="top-pagination" id="top-pagination"></div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer"><p>by DedKob • 2026</p><p>Статистика оновлюється через StoneLightStats.</p></footer>
+</body>
+</html>
