@@ -1,5 +1,5 @@
 {
-  "generatedAt":"2026-06-25T05:01:58.824Z",
+  "generatedAt":"2026-06-25T05:10:18.277Z",
   "server":{
     "online":true,
     "players":1,
@@ -12,7 +12,7 @@
     {"name":".UFOshnik16143","uuid":"00000000-0000-0000-0009-01fc3dca115f","head":"https://crafthead.net/helm/00000000-0000-0000-0009-01fc3dca115f/64"}
   ],
   "topPlayers":[
-    {"rank":1,"name":".UFOshnik16143","uuid":"00000000-0000-0000-0009-01fc3dca115f","head":"https://crafthead.net/helm/00000000-0000-0000-0009-01fc3dca115f/64","playtimeMillis":3904084,"playtimeSeconds":3904,"playtime":"1 год 5 хв"},
+    {"rank":1,"name":".UFOshnik16143","uuid":"00000000-0000-0000-0009-01fc3dca115f","head":"https://crafthead.net/helm/00000000-0000-0000-0009-01fc3dca115f/64","playtimeMillis":4403536,"playtimeSeconds":4403,"playtime":"1 год 13 хв"},
     {"rank":2,"name":"DedKob","uuid":"eea77d19-5de2-355f-a29c-d5dcb09af117","head":"https://crafthead.net/helm/eea77d19-5de2-355f-a29c-d5dcb09af117/64","playtimeMillis":314460,"playtimeSeconds":314,"playtime":"5 хв"}
   ],
   "activity":{
