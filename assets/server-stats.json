@@ -1,5 +1,5 @@
 {
-  "generatedAt":"2026-06-25T20:51:26.588Z",
+  "generatedAt":"2026-06-25T20:56:18.698Z",
   "server":{
     "online":true,
     "players":5,
@@ -9,22 +9,22 @@
     "fullVersion":"26.1.2-70-70eaed6 (MC: 26.1.2)"
   },
   "onlinePlayers":[
-    {"name":"ProGrusha","uuid":"28e2563a-e156-30a8-83b0-5f7869c58e2f","head":"https://crafthead.net/helm/28e2563a-e156-30a8-83b0-5f7869c58e2f/64"},
     {"name":"Sushi_sushi05","uuid":"62cdb002-e03d-3bdf-a69e-df2a9233a7e7","head":"https://crafthead.net/helm/62cdb002-e03d-3bdf-a69e-df2a9233a7e7/64"},
     {"name":"Liriz","uuid":"0ec866c2-4125-3325-b11b-5faf180fefe1","head":"https://crafthead.net/helm/0ec866c2-4125-3325-b11b-5faf180fefe1/64"},
+    {"name":"NarzhanP","uuid":"52aac06b-2950-3283-bcd0-51298b6bf0aa","head":"https://crafthead.net/helm/52aac06b-2950-3283-bcd0-51298b6bf0aa/64"},
     {"name":"maximzhaba","uuid":"a7b6db5a-86ed-37fd-ab01-206909cb2976","head":"https://crafthead.net/helm/a7b6db5a-86ed-37fd-ab01-206909cb2976/64"},
-    {"name":"NarzhanP","uuid":"52aac06b-2950-3283-bcd0-51298b6bf0aa","head":"https://crafthead.net/helm/52aac06b-2950-3283-bcd0-51298b6bf0aa/64"}
+    {"name":"ProGrusha","uuid":"28e2563a-e156-30a8-83b0-5f7869c58e2f","head":"https://crafthead.net/helm/28e2563a-e156-30a8-83b0-5f7869c58e2f/64"}
   ],
   "topPlayers":[
-    {"rank":1,"name":"Liriz","uuid":"0ec866c2-4125-3325-b11b-5faf180fefe1","head":"https://crafthead.net/helm/0ec866c2-4125-3325-b11b-5faf180fefe1/64","playtimeMillis":37219157,"playtimeSeconds":37219,"playtime":"10 год 20 хв"},
+    {"rank":1,"name":"Liriz","uuid":"0ec866c2-4125-3325-b11b-5faf180fefe1","head":"https://crafthead.net/helm/0ec866c2-4125-3325-b11b-5faf180fefe1/64","playtimeMillis":37511267,"playtimeSeconds":37511,"playtime":"10 год 25 хв"},
     {"rank":2,"name":"FunnyVanyaTV","uuid":"2770dc54-d71e-3cc6-a45a-03fd0d5775e6","head":"https://crafthead.net/helm/2770dc54-d71e-3cc6-a45a-03fd0d5775e6/64","playtimeMillis":25973315,"playtimeSeconds":25973,"playtime":"7 год 12 хв"},
-    {"rank":3,"name":"Sushi_sushi05","uuid":"62cdb002-e03d-3bdf-a69e-df2a9233a7e7","head":"https://crafthead.net/helm/62cdb002-e03d-3bdf-a69e-df2a9233a7e7/64","playtimeMillis":23791430,"playtimeSeconds":23791,"playtime":"6 год 36 хв"},
+    {"rank":3,"name":"Sushi_sushi05","uuid":"62cdb002-e03d-3bdf-a69e-df2a9233a7e7","head":"https://crafthead.net/helm/62cdb002-e03d-3bdf-a69e-df2a9233a7e7/64","playtimeMillis":24083540,"playtimeSeconds":24083,"playtime":"6 год 41 хв"},
     {"rank":4,"name":"kotik","uuid":"17b07362-3ef1-3036-afec-7cc574cb5747","head":"https://crafthead.net/helm/17b07362-3ef1-3036-afec-7cc574cb5747/64","playtimeMillis":19186974,"playtimeSeconds":19186,"playtime":"5 год 19 хв"},
-    {"rank":5,"name":"ProGrusha","uuid":"28e2563a-e156-30a8-83b0-5f7869c58e2f","head":"https://crafthead.net/helm/28e2563a-e156-30a8-83b0-5f7869c58e2f/64","playtimeMillis":15995901,"playtimeSeconds":15995,"playtime":"4 год 26 хв"},
+    {"rank":5,"name":"ProGrusha","uuid":"28e2563a-e156-30a8-83b0-5f7869c58e2f","head":"https://crafthead.net/helm/28e2563a-e156-30a8-83b0-5f7869c58e2f/64","playtimeMillis":16288011,"playtimeSeconds":16288,"playtime":"4 год 31 хв"},
     {"rank":6,"name":"BlackToshida","uuid":"b5eb02e9-148f-359c-b1a3-6878c23e793b","head":"https://crafthead.net/helm/b5eb02e9-148f-359c-b1a3-6878c23e793b/64","playtimeMillis":15534646,"playtimeSeconds":15534,"playtime":"4 год 18 хв"},
-    {"rank":7,"name":"maximzhaba","uuid":"a7b6db5a-86ed-37fd-ab01-206909cb2976","head":"https://crafthead.net/helm/a7b6db5a-86ed-37fd-ab01-206909cb2976/64","playtimeMillis":12777852,"playtimeSeconds":12777,"playtime":"3 год 32 хв"},
+    {"rank":7,"name":"maximzhaba","uuid":"a7b6db5a-86ed-37fd-ab01-206909cb2976","head":"https://crafthead.net/helm/a7b6db5a-86ed-37fd-ab01-206909cb2976/64","playtimeMillis":13069962,"playtimeSeconds":13069,"playtime":"3 год 37 хв"},
     {"rank":8,"name":".UFOshnik16143","uuid":"00000000-0000-0000-0009-01fc3dca115f","head":"https://crafthead.net/helm/00000000-0000-0000-0009-01fc3dca115f/64","playtimeMillis":12667673,"playtimeSeconds":12667,"playtime":"3 год 31 хв"},
-    {"rank":9,"name":"NarzhanP","uuid":"52aac06b-2950-3283-bcd0-51298b6bf0aa","head":"https://crafthead.net/helm/52aac06b-2950-3283-bcd0-51298b6bf0aa/64","playtimeMillis":11119068,"playtimeSeconds":11119,"playtime":"3 год 5 хв"},
+    {"rank":9,"name":"NarzhanP","uuid":"52aac06b-2950-3283-bcd0-51298b6bf0aa","head":"https://crafthead.net/helm/52aac06b-2950-3283-bcd0-51298b6bf0aa/64","playtimeMillis":11411178,"playtimeSeconds":11411,"playtime":"3 год 10 хв"},
     {"rank":10,"name":"letfungus","uuid":"d203af76-2695-36a5-9191-6e1264b1c685","head":"https://crafthead.net/helm/d203af76-2695-36a5-9191-6e1264b1c685/64","playtimeMillis":10399927,"playtimeSeconds":10399,"playtime":"2 год 53 хв"},
     {"rank":11,"name":"Certezarh","uuid":"3044325b-f58f-3fdb-a507-ba9dcf40c64f","head":"https://crafthead.net/helm/3044325b-f58f-3fdb-a507-ba9dcf40c64f/64","playtimeMillis":8953733,"playtimeSeconds":8953,"playtime":"2 год 29 хв"},
     {"rank":12,"name":"trideron","uuid":"32800bed-69aa-3da7-b413-8645566ea6a2","head":"https://crafthead.net/helm/32800bed-69aa-3da7-b413-8645566ea6a2/64","playtimeMillis":5055300,"playtimeSeconds":5055,"playtime":"1 год 24 хв"},
