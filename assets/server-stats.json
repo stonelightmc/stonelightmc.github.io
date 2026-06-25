@@ -1,8 +1,8 @@
 {
-  "generatedAt":"2026-06-25T09:50:18.195Z",
+  "generatedAt":"2026-06-25T09:51:26.238Z",
   "server":{
     "online":true,
-    "players":3,
+    "players":2,
     "maxPlayers":30,
     "software":"Paper",
     "coreVersion":"26.1.2.build.70-stable",
@@ -10,15 +10,14 @@
   },
   "onlinePlayers":[
     {"name":"kotik","uuid":"17b07362-3ef1-3036-afec-7cc574cb5747","head":"https://crafthead.net/helm/17b07362-3ef1-3036-afec-7cc574cb5747/64"},
-    {"name":"Sushi_sushi05","uuid":"62cdb002-e03d-3bdf-a69e-df2a9233a7e7","head":"https://crafthead.net/helm/62cdb002-e03d-3bdf-a69e-df2a9233a7e7/64"},
-    {"name":"BlackToshida","uuid":"b5eb02e9-148f-359c-b1a3-6878c23e793b","head":"https://crafthead.net/helm/b5eb02e9-148f-359c-b1a3-6878c23e793b/64"}
+    {"name":"Sushi_sushi05","uuid":"62cdb002-e03d-3bdf-a69e-df2a9233a7e7","head":"https://crafthead.net/helm/62cdb002-e03d-3bdf-a69e-df2a9233a7e7/64"}
   ],
   "topPlayers":[
     {"rank":1,"name":"BlackToshida","uuid":"b5eb02e9-148f-359c-b1a3-6878c23e793b","head":"https://crafthead.net/helm/b5eb02e9-148f-359c-b1a3-6878c23e793b/64","playtimeMillis":9957806,"playtimeSeconds":9957,"playtime":"2 год 45 хв"},
-    {"rank":2,"name":"kotik","uuid":"17b07362-3ef1-3036-afec-7cc574cb5747","head":"https://crafthead.net/helm/17b07362-3ef1-3036-afec-7cc574cb5747/64","playtimeMillis":6588479,"playtimeSeconds":6588,"playtime":"1 год 49 хв"},
+    {"rank":2,"name":"kotik","uuid":"17b07362-3ef1-3036-afec-7cc574cb5747","head":"https://crafthead.net/helm/17b07362-3ef1-3036-afec-7cc574cb5747/64","playtimeMillis":6656522,"playtimeSeconds":6656,"playtime":"1 год 50 хв"},
     {"rank":3,"name":".UFOshnik16143","uuid":"00000000-0000-0000-0009-01fc3dca115f","head":"https://crafthead.net/helm/00000000-0000-0000-0009-01fc3dca115f/64","playtimeMillis":4407081,"playtimeSeconds":4407,"playtime":"1 год 13 хв"},
     {"rank":4,"name":"trideron","uuid":"32800bed-69aa-3da7-b413-8645566ea6a2","head":"https://crafthead.net/helm/32800bed-69aa-3da7-b413-8645566ea6a2/64","playtimeMillis":3823741,"playtimeSeconds":3823,"playtime":"1 год 3 хв"},
-    {"rank":5,"name":"Sushi_sushi05","uuid":"62cdb002-e03d-3bdf-a69e-df2a9233a7e7","head":"https://crafthead.net/helm/62cdb002-e03d-3bdf-a69e-df2a9233a7e7/64","playtimeMillis":3593666,"playtimeSeconds":3593,"playtime":"59 хв"},
+    {"rank":5,"name":"Sushi_sushi05","uuid":"62cdb002-e03d-3bdf-a69e-df2a9233a7e7","head":"https://crafthead.net/helm/62cdb002-e03d-3bdf-a69e-df2a9233a7e7/64","playtimeMillis":3661709,"playtimeSeconds":3661,"playtime":"1 год 1 хв"},
     {"rank":6,"name":"DedKob","uuid":"eea77d19-5de2-355f-a29c-d5dcb09af117","head":"https://crafthead.net/helm/eea77d19-5de2-355f-a29c-d5dcb09af117/64","playtimeMillis":314460,"playtimeSeconds":314,"playtime":"5 хв"}
   ],
   "activity":{
@@ -81,7 +80,8 @@
       {"time":"2026-06-25T09:11:24.888Z","timestamp":1782378684888,"label":"09:11","online":4,"players":4},
       {"time":"2026-06-25T09:21:26.238Z","timestamp":1782379286238,"label":"09:21","online":3,"players":3},
       {"time":"2026-06-25T09:31:26.238Z","timestamp":1782379886238,"label":"09:31","online":4,"players":4},
-      {"time":"2026-06-25T09:41:26.238Z","timestamp":1782380486238,"label":"09:41","online":2,"players":2}
+      {"time":"2026-06-25T09:41:26.238Z","timestamp":1782380486238,"label":"09:41","online":2,"players":2},
+      {"time":"2026-06-25T09:51:26.238Z","timestamp":1782381086238,"label":"09:51","online":2,"players":2}
     ],
     "week":[
       {"time":"2026-06-25T00:38:16.979Z","timestamp":1782347896979,"label":"25.06","online":0,"players":0},
@@ -142,7 +142,8 @@
       {"time":"2026-06-25T09:11:24.888Z","timestamp":1782378684888,"label":"25.06","online":4,"players":4},
       {"time":"2026-06-25T09:21:26.238Z","timestamp":1782379286238,"label":"25.06","online":3,"players":3},
       {"time":"2026-06-25T09:31:26.238Z","timestamp":1782379886238,"label":"25.06","online":4,"players":4},
-      {"time":"2026-06-25T09:41:26.238Z","timestamp":1782380486238,"label":"25.06","online":2,"players":2}
+      {"time":"2026-06-25T09:41:26.238Z","timestamp":1782380486238,"label":"25.06","online":2,"players":2},
+      {"time":"2026-06-25T09:51:26.238Z","timestamp":1782381086238,"label":"25.06","online":2,"players":2}
     ],
     "month":[
       {"time":"2026-06-25T00:38:16.979Z","timestamp":1782347896979,"label":"25.06","online":0,"players":0},
@@ -203,7 +204,8 @@
       {"time":"2026-06-25T09:11:24.888Z","timestamp":1782378684888,"label":"25.06","online":4,"players":4},
       {"time":"2026-06-25T09:21:26.238Z","timestamp":1782379286238,"label":"25.06","online":3,"players":3},
       {"time":"2026-06-25T09:31:26.238Z","timestamp":1782379886238,"label":"25.06","online":4,"players":4},
-      {"time":"2026-06-25T09:41:26.238Z","timestamp":1782380486238,"label":"25.06","online":2,"players":2}
+      {"time":"2026-06-25T09:41:26.238Z","timestamp":1782380486238,"label":"25.06","online":2,"players":2},
+      {"time":"2026-06-25T09:51:26.238Z","timestamp":1782381086238,"label":"25.06","online":2,"players":2}
     ]
   }
 }
